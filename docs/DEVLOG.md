@@ -13,3 +13,4 @@
 - pip via python3.10 -m pip (pip/pip3 cassé sur Ubuntu 20.04)
 - La dépendance httpx a été mise à jour à `httpx>=0.28.1` pour assurer la compatibilité avec `google-genai==1.14.0`.
 - **Firewall** : Ouverture des ports 5173 (TCP) et 8042 (TCP) via UFW sur le VPS pour permettre l'accès réseau à l'application.
+- **Correction de chemins** : Mise à jour des chemins absolus dans la doc suite au déplacement du projet vers `/root/.openclaw/workspace-coder/projects/polytech-revision`.
