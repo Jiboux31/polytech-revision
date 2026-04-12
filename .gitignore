@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+venv/
+*.db
+
+node_modules/
+dist/
+.vite/
+.vscode/
+.idea/
+.DS_Store
+backend/data/annales/*.pdf
