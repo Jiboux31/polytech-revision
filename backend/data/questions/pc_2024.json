@@ -1,0 +1,41 @@
+{
+  "annee": 2024,
+  "matiere": "physique_chimie",
+  "source_pdf": "Sujet-complet-2024.pdf",
+  "source_corrige": "corrige-PC-2024.pdf",
+  "exercices": [
+    {
+      "id": "PC2024-I",
+      "titre": "Diffraction et interférences",
+      "chapitre": "ondes_optique",
+      "points_total": 11,
+      "pages_enonce": [8],
+      "sous_questions": [
+        {"id": "PC2024-I-1", "enonce_court": "Identifier le phénomène optique", "points": 3, "reponse_attendue": "Phénomène de diffraction et interférences lumineuses.", "cours_associe": "Ondes lumineuses.", "indice": "Pensez aux fentes d'Young.", "type_reponse": "manuscrit"},
+        {"id": "PC2024-I-2", "enonce_court": "Calcul de la longueur d'onde", "points": 8, "reponse_attendue": "Application de la formule de l'interfrange i = lambda * D / a.", "cours_associe": "Interférences.", "indice": "Utilisez l'interfrange mesurée sur la figure.", "type_reponse": "manuscrit"}
+      ]
+    },
+    {
+      "id": "PC2024-II",
+      "titre": "Estérification",
+      "chapitre": "chimie_organique",
+      "points_total": 13,
+      "pages_enonce": [9],
+      "sous_questions": [
+        {"id": "PC2024-II-1", "enonce_court": "Équation de la réaction", "points": 5, "reponse_attendue": "Acide carboxylique + Alcool = Ester + Eau", "cours_associe": "Réactions d'estérification.", "indice": "N'oubliez pas que la réaction est équilibrée.", "type_reponse": "manuscrit"},
+        {"id": "PC2024-II-2", "enonce_court": "Calcul du rendement", "points": 8, "reponse_attendue": "Rendement = n_exp / n_theo.", "cours_associe": "Rendement d'une synthèse organique.", "indice": "Identifiez le réactif limitant.", "type_reponse": "manuscrit"}
+      ]
+    },
+    {
+      "id": "PC2024-III",
+      "titre": "Saut à ski",
+      "chapitre": "mecanique",
+      "points_total": 16,
+      "pages_enonce": [10],
+      "sous_questions": [
+        {"id": "PC2024-III-1", "enonce_court": "Bilan des forces", "points": 6, "reponse_attendue": "Poids, réaction du support, frottements.", "cours_associe": "Mécanique du point.", "indice": "Faites un schéma.", "type_reponse": "manuscrit"},
+        {"id": "PC2024-III-2", "enonce_court": "Application du théorème de l'énergie cinétique", "points": 10, "reponse_attendue": "Delta Ec = Somme des travaux des forces.", "cours_associe": "Énergétique.", "indice": "Le travail du poids ne dépend que de l'altitude.", "type_reponse": "manuscrit"}
+      ]
+    }
+  ]
+}

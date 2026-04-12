@@ -1,0 +1,32 @@
+{
+  "annee": 2024,
+  "matiere": "maths_specialite",
+  "source_pdf": "Sujet-complet-2024.pdf",
+  "source_corrige": "corrige-maths-2024.pdf",
+  "exercices": [
+    {
+      "id": "MSPE2024-I",
+      "titre": "Suites numériques",
+      "chapitre": "suites",
+      "points_total": 20,
+      "pages_enonce": [5],
+      "sous_questions": [
+        {"id": "MSPE2024-I-1a", "enonce_court": "Calculer u1 et u2", "points": 2, "reponse_attendue": "u1 = 4/3, u2 = 9/8", "cours_associe": "Calcul des premiers termes d'une suite définie par récurrence.", "indice": "Remplacez n par 0 puis 1 dans la formule.", "type_reponse": "manuscrit"},
+        {"id": "MSPE2024-I-1b", "enonce_court": "Conjecturer le comportement de (un)", "points": 2, "reponse_attendue": "La suite (un) est décroissante et converge vers 1.", "cours_associe": "Conjecture graphique ou numérique du sens de variation.", "indice": "Observez les valeurs : 2, 4/3, 9/8.", "type_reponse": "manuscrit"},
+        {"id": "MSPE2024-I-2a", "enonce_court": "Exprimer u_{n+1} - u_n", "points": 3, "reponse_attendue": "u_{n+1} - u_n = (1-u_n)(u_n+2) / (u_n+4)", "cours_associe": "Pour étudier le sens de variation, on calcule la différence de deux termes consécutifs.", "indice": "Mettez au même dénominateur.", "type_reponse": "manuscrit"},
+        {"id": "MSPE2024-I-2b", "enonce_court": "En déduire que (un) est décroissante", "points": 3, "reponse_attendue": "Pour tout n, un >= 1. Donc 1-un <= 0. Comme un+2 > 0 et un+4 > 0, u_{n+1}-un <= 0.", "cours_associe": "Signe d'une expression rationnelle.", "indice": "Utilisez le fait que un >= 1.", "type_reponse": "manuscrit"}
+      ]
+    },
+    {
+      "id": "MSPE2024-II",
+      "titre": "Géométrie dans l'espace",
+      "chapitre": "geometrie_espace",
+      "points_total": 20,
+      "pages_enonce": [6],
+      "sous_questions": [
+        {"id": "MSPE2024-II-1", "enonce_court": "Coordonnées de vecteurs et équation de plan", "points": 10, "reponse_attendue": "Vérification des points coplanaires et équation cartésienne.", "cours_associe": "Géométrie analytique dans l'espace.", "indice": "Utilisez le produit scalaire et les vecteurs normaux.", "type_reponse": "manuscrit"},
+        {"id": "MSPE2024-II-2", "enonce_court": "Représentation paramétrique d'une droite", "points": 10, "reponse_attendue": "Système d'équations paramétriques issu d'un point et d'un vecteur directeur.", "cours_associe": "Droite définie par un point et un vecteur directeur.", "indice": "M(x,y,z) appartient à D ssi AM = t.u.", "type_reponse": "manuscrit"}
+      ]
+    }
+  ]
+}
