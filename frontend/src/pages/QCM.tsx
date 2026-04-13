@@ -71,19 +71,37 @@ export default function QCM() {
         showBack={true}
       />
       
+      {exercise?.enonce_commun && (
+        <div style={{
+          background: '#F0F4FF',
+          padding: '20px',
+          borderRadius: 'var(--radius)',
+          borderLeft: '4px solid var(--accent-blue)',
+          marginBottom: '32px',
+          fontSize: '1.15rem',
+          lineHeight: '1.7',
+          
+          boxShadow: 'var(--shadow)'
+        }}>
+          <MathRender latex={exercise.enonce_commun} display={false} />
+        </div>
+      )}
+
+      
       <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', marginBottom: '40px' }}>
         {exercise?.questions?.map((q: any) => (
           <div key={q.id} style={{
             background: 'var(--bg-card)',
             padding: '24px',
             borderRadius: 'var(--radius)',
-            boxShadow: 'var(--shadow)'
+            
+          boxShadow: 'var(--shadow)'
           }}>
             <div style={{ display: 'flex', gap: '16px' }}>
               <div style={{ fontWeight: 600, color: 'var(--accent-blue)', fontSize: '1.1rem' }}>
                 {q.id.split('-').pop()}
               </div>
-              <div style={{ fontSize: '1.2rem', flex: 1, overflowX: 'auto' }}>
+              <div style={{ fontSize: '1.2rem', flex: 1,  }}>
                 <MathRender latex={q.enonce} display={true} />
               </div>
             </div>
@@ -141,7 +159,8 @@ export default function QCM() {
             fontWeight: 600,
             borderRadius: 'var(--radius)',
             cursor: submitting ? 'wait' : 'pointer',
-            boxShadow: 'var(--shadow)'
+            
+          boxShadow: 'var(--shadow)'
           }}
         >
           {submitting ? 'Validation...' : '✅ Valider'}

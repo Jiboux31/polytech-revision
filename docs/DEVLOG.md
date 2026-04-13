@@ -25,3 +25,4 @@
 - Validation des specs et définition de la stratégie (ajustement de l'appel `/chapitre` au lieu de `/plan` pour lancer un bloc QCM).
 - Changement du pass state vers `navigate('/qcm/.../result', { state: { resultData } })`.
 - Implémentation du CSS global avec les variables, du index.html avec les fonts Google, et démarrage du codage des composants UI.
+- Fix UX : Suppression des scrolls horizontaux et forçage du wrapping KaTeX pour les énoncés longs.

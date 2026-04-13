@@ -68,3 +68,37 @@ button {
   margin: 0 auto;
   padding: 20px;
 }
+
+/* Fix KaTeX wrapping pour le texte long */
+.katex {
+  white-space: normal !important;
+  word-wrap: break-word;
+}
+.katex .text {
+  white-space: normal !important;
+}
+.katex-html {
+  white-space: normal !important;
+}
+
+/* Force wrap global pour les conteneurs */
+.katex-display {
+  overflow-x: hidden !important;
+  overflow-wrap: break-word !important;
+  white-space: normal !important;
+}
+
+.katex-display > .katex {
+  white-space: normal !important;
+  display: inline !important;
+}
+
+.katex-html {
+  display: inline !important;
+  white-space: normal !important;
+}
+
+.base {
+  white-space: normal !important;
+  display: inline !important;
+}
