@@ -1,18 +1,21 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import RevisionPlan from './pages/RevisionPlan'
+import QCM from './pages/QCM'
+import QCMResult from './pages/QCMResult'
+import Dashboard from './pages/Dashboard'
+
 function App() {
   return (
-    <div style={{ 
-      display: 'flex', 
-      justifyContent: 'center', 
-      alignItems: 'center', 
-      height: '100vh',
-      fontFamily: 'system-ui'
-    }}>
-      <div style={{ textAlign: 'center' }}>
-        <h1>PolytechRevision</h1>
-        <p>Bienvenue Garance ! 🎓</p>
-        <p style={{ color: '#666' }}>L'app de révision est en cours de construction...</p>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/plan" element={<RevisionPlan />} />
+        <Route path="/qcm/:exerciseId" element={<QCM />} />
+        <Route path="/qcm/:exerciseId/result" element={<QCMResult />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
