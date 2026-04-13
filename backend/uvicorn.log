@@ -16,3 +16,304 @@ INFO:     127.0.0.1:59996 - "GET /api/exercices/chapitre/maths_qcm/calculs_algeb
 INFO:     127.0.0.1:59998 - "GET /api/progression/garance HTTP/1.1" 200 OK
 INFO:     127.0.0.1:60000 - "POST /api/progression/resultat HTTP/1.1" 200 OK
 INFO:     127.0.0.1:38534 - "POST /api/correction/qcm HTTP/1.1" 200 OK
+INFO:     82.64.111.133:3523 - "GET /health HTTP/1.1" 200 OK
+INFO:     82.64.111.133:42709 - "GET /health HTTP/1.1" 200 OK
+INFO:     82.64.111.133:46627 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35368 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54942 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54944 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53344 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53352 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53364 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53368 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53380 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53396 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43970 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43986 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44000 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44016 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44026 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44028 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44038 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44044 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44046 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44062 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44078 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44080 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50414 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50426 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50430 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50446 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50454 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50468 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50474 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50478 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52812 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52816 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52830 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52846 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52862 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52876 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52888 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52892 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52906 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52918 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52928 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52938 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55430 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55438 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55440 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55450 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33056 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33058 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48008 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48016 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48026 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48030 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48036 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48042 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48052 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48058 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38346 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38360 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38368 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38374 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38386 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38398 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38402 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38414 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38420 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38424 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38440 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38446 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38458 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38470 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38482 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38484 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38490 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38496 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40718 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40724 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40738 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40754 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40758 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40766 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41344 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41356 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41358 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41368 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41372 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41376 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46796 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46802 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46808 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46814 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46822 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46826 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46840 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46846 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46852 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46862 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46874 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46882 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46898 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46912 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46928 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46930 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46934 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46942 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42482 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42498 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42510 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42514 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42518 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42520 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35982 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35996 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36010 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36022 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36032 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36040 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36046 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36050 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36066 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36082 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36088 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36100 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33850 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33866 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33882 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33894 - "GET /progression/garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58998 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57708 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57698 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57710 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57726 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57734 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57750 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57760 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57776 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57778 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57784 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34714 - "GET /api/exercices/chapitre/maths_qcm/calculs_algebre HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34722 - "GET /api/exercices/QCM2025-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34730 - "GET /api/exercices/QCM2025-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51988 - "POST /api/correction/qcm HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51998 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52000 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52012 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52018 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52030 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49840 - "GET /api/exercices/QCM2025-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49844 - "GET /api/exercices/QCM2025-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47750 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47752 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47758 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47762 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47400 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47414 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47420 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47436 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47440 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47442 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34792 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34806 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36882 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36892 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36898 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36914 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36916 - "GET /api/exercices/chapitre/maths_qcm/fonctions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36920 - "GET /api/exercices/QCM2025-IV HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36936 - "GET /api/exercices/QCM2025-IV HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48012 - "POST /api/correction/qcm HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48026 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48038 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48042 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48046 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48062 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37948 - "GET /api/exercices/QCM2025-IV HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37950 - "GET /api/exercices/QCM2025-IV HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37956 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37970 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37982 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37988 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53904 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53910 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37324 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37330 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37338 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37342 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37352 - "GET /api/exercices/chapitre/maths_qcm/suites HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37364 - "GET /api/exercices/QCM2025-V HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37378 - "GET /api/exercices/QCM2025-V HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34722 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34730 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34732 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34740 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37518 - "GET /api/exercices/chapitre/maths_qcm/probabilites HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37522 - "GET /api/exercices/QCM2024-V HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37536 - "GET /api/exercices/QCM2024-V HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39738 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39750 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39762 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39778 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39780 - "GET /api/exercices/chapitre/maths_qcm/geometrie_plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39788 - "GET /api/exercices/QCM2025-VII HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39802 - "GET /api/exercices/QCM2025-VII HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60966 - "POST /api/correction/qcm HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60980 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32768 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53844 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53860 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53864 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53878 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54394 - "GET /api/exercices/chapitre/maths_qcm/geometrie_plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54396 - "GET /api/exercices/QCM2025-VII HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54410 - "GET /api/exercices/QCM2025-VII HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54414 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54424 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54440 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54454 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37964 - "GET /api/exercices/chapitre/maths_qcm/calculs_algebre HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37970 - "GET /api/exercices/QCM2025-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37984 - "GET /api/exercices/QCM2025-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51752 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51760 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51774 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51780 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51788 - "GET /api/exercices/chapitre/maths_qcm/fonctions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51796 - "GET /api/exercices/QCM2025-IV HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51812 - "GET /api/exercices/QCM2025-IV HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59382 - "POST /api/correction/qcm HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59392 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59400 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59402 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60668 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60672 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37492 - "GET /api/exercices/QCM2025-IV HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37504 - "GET /api/exercices/QCM2025-IV HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59122 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59138 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59148 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59154 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59158 - "GET /api/exercices/chapitre/maths_qcm/fonctions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59174 - "GET /api/exercices/QCM2025-IV HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59180 - "GET /api/exercices/QCM2025-IV HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59190 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59196 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59192 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59208 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59216 - "GET /api/exercices/chapitre/maths_qcm/calculs_algebre HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59230 - "GET /api/exercices/QCM2025-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59242 - "GET /api/exercices/QCM2025-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41506 - "POST /api/correction/qcm HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41516 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41522 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41536 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41552 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41568 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41574 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60790 - "GET /api/exercices/QCM2025-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60804 - "GET /api/exercices/QCM2025-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49908 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49918 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49928 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49932 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50996 - "GET /api/exercices/QCM2025-VII HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51004 - "GET /api/exercices/QCM2025-VII HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51008 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51018 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51028 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51038 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51048 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51056 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51072 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51074 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51082 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51086 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51102 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51108 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42910 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42922 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42934 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42946 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42952 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42964 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42980 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42992 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43004 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43018 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43024 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43028 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52010 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52024 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52040 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52054 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52058 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52074 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36572 - "GET /api/exercices/chapitre/maths_qcm/calculs_algebre HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36576 - "GET /api/exercices/chapitre/maths_qcm/fonctions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34772 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34778 - "GET /api/progression/garance HTTP/1.1" 200 OK

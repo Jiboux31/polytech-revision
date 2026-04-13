@@ -13,7 +13,11 @@ export default function MathRender({ latex, display = false }: Props) {
   useEffect(() => {
     if (ref.current) {
       try {
-        katex.render(latex, ref.current, {
+        // Patch heuristique pour ajouter des espaces autour des mots français
+        // car le JSON source mélange texte et LaTeX sans \text{}
+        const patchedLatex = latex.replace(/([a-zA-ZàâäéèêëîïôöùûüçÀÂÄÉÈÊËÎÏÔÖÙÛÜÇ]{3,})/g, '\\text{ $1 }')
+        
+        katex.render(patchedLatex, ref.current, {
           displayMode: display,
           throwOnError: false,
           trust: true

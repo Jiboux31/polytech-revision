@@ -7,12 +7,42 @@
       "titre": "Calculs",
       "chapitre": "calculs_algebre",
       "questions": [
-        {"id": "QCM2025-I-A", "enonce": "\\frac{(\\sqrt{8})^2 \\times (\\sqrt{3})^5}{6^3 \\times \\sqrt{6} \\times (\\sqrt{2})^{-5}} = \\frac{4}{3}", "reponse": true, "explication": "En simplifiant : numérateur = 8 × 9√3 = 72√3. Dénominateur = 216 × √6 / (4√2) = 216√3/4 = 54√3. Donc 72√3 / 54√3 = 4/3."},
-        {"id": "QCM2025-I-B", "enonce": "\\frac{8^{10} - 4^{10}}{10^{10} - 8^{10}} = 2^{10}", "reponse": false, "explication": "8^{10} = 2^{30}, 4^{10} = 2^{20}. Numérateur = 2^{20}(2^{10}-1). Dénominateur = 10^{10} - 2^{30}. Le quotient ne se simplifie pas en 2^{10}."},
-        {"id": "QCM2025-I-C", "enonce": "2 + \\frac{4}{1 - \\frac{3}{2 - \\frac{5}{3}}} = \\frac{3}{2}", "reponse": true, "explication": "De l'intérieur : 2-5/3 = 1/3, puis 1 - 3/(1/3) = 1-9 = -8, puis 2 + 4/(-8) = 2 - 1/2 = 3/2."},
-        {"id": "QCM2025-I-D", "enonce": "\\forall n \\in \\mathbb{N}, \\forall a \\neq 0, \\quad \\frac{(a^n)^2}{\\frac{a^n + a^n}{2}} = a^n", "reponse": true, "explication": "(a^n)^2 = a^{2n}. (a^n + a^n)/2 = 2a^n/2 = a^n. Donc a^{2n}/a^n = a^n."},
-        {"id": "QCM2025-I-E", "enonce": "\\forall a \\geq 1, \\quad (\\sqrt{a - \\sqrt{a}} + \\sqrt{a + \\sqrt{a}})^2 = 2a", "reponse": true, "explication": "En développant : (a-√a) + 2√((a-√a)(a+√a)) + (a+√a) = 2a + 2√(a²-a). Pour a ≥ 1, vérifions que √(a²-a) = 0 n'est pas nécessaire : en fait le développement donne 2a + 2√(a²-a) qui ne vaut 2a que si a=0 ou a=1. L'affirmation est VRAIE (vérifiée par le corrigé officiel)."},
-        {"id": "QCM2025-I-F", "enonce": "\\ln(10^5) - \\ln(10^3) - \\ln(0{,}01) = 2\\ln(100)", "reponse": true, "explication": "ln(10^5) - ln(10^3) - ln(10^{-2}) = 5ln10 - 3ln10 + 2ln10 = 4ln10 = 2×2ln10 = 2ln(10^2) = 2ln(100)."}
+        {
+          "id": "QCM2025-I-A",
+          "enonce": "\\frac{(\\sqrt{8})^2 \\times (\\sqrt{3})^5}{6^3 \\times \\sqrt{6} \\times (\\sqrt{2})^{-5}} = \\frac{4}{3}",
+          "reponse": true,
+          "explication": "En simplifiant : numérateur = 8 × 9√3 = 72√3. Dénominateur = 216 × √6 / (4√2) = 216√3/4 = 54√3. Donc 72√3 / 54√3 = 4/3."
+        },
+        {
+          "id": "QCM2025-I-B",
+          "enonce": "\\frac{8^{10} - 4^{10}}{10^{10} - 8^{10}} = 2^{10}",
+          "reponse": false,
+          "explication": "8^{10} = 2^{30}, 4^{10} = 2^{20}. Numérateur = 2^{20}(2^{10}-1). Dénominateur = 10^{10} - 2^{30}. Le quotient ne se simplifie pas en 2^{10}."
+        },
+        {
+          "id": "QCM2025-I-C",
+          "enonce": "2 + \\frac{4}{1 - \\frac{3}{2 - \\frac{5}{3}}} = \\frac{3}{2}",
+          "reponse": true,
+          "explication": "De l'intérieur : 2-5/3 = 1/3, puis 1 - 3/(1/3) = 1-9 = -8, puis 2 + 4/(-8) = 2 - 1/2 = 3/2."
+        },
+        {
+          "id": "QCM2025-I-D",
+          "enonce": "\\forall n \\in \\mathbb{N}, \\forall a \\neq 0, \\quad \\frac{(a^n)^2}{\\frac{a^n + a^n}{2}} = a^n",
+          "reponse": true,
+          "explication": "(a^n)^2 = a^{2n}. (a^n + a^n)/2 = 2a^n/2 = a^n. Donc a^{2n}/a^n = a^n."
+        },
+        {
+          "id": "QCM2025-I-E",
+          "enonce": "\\forall a \\geq 1, \\quad (\\sqrt{a - \\sqrt{a}} + \\sqrt{a + \\sqrt{a}})^2 = 2a",
+          "reponse": true,
+          "explication": "En développant : (a-√a) + 2√((a-√a)(a+√a)) + (a+√a) = 2a + 2√(a²-a). Pour a ≥ 1, vérifions que √(a²-a) = 0 n'est pas nécessaire : en fait le développement donne 2a + 2√(a²-a) qui ne vaut 2a que si a=0 ou a=1. L'affirmation est VRAIE (vérifiée par le corrigé officiel)."
+        },
+        {
+          "id": "QCM2025-I-F",
+          "enonce": "\\ln(10^5) - \\ln(10^3) - \\ln(0{,}01) = 2\\ln(100)",
+          "reponse": true,
+          "explication": "ln(10^5) - ln(10^3) - ln(10^{-2}) = 5ln10 - 3ln10 + 2ln10 = 4ln10 = 2×2ln10 = 2ln(10^2) = 2ln(100)."
+        }
       ],
       "indice": "Décomposez chaque terme en puissances de nombres premiers (2, 3, 5) et utilisez les propriétés des logarithmes."
     },
@@ -21,8 +51,18 @@
       "titre": "Équations et inéquations",
       "chapitre": "calculs_algebre",
       "questions": [
-        {"id": "QCM2025-II-A", "enonce": "L'équation x^2 + (m+1)x + 1 = 0 n'admet pas de solution réelle ssi m \\in ]-3\\,;\\,1[", "reponse": true, "explication": "Discriminant Δ = (m+1)² - 4 = m² + 2m - 3 = (m+3)(m-1). Δ < 0 ssi m ∈ ]-3;1[."},
-        {"id": "QCM2025-II-B", "enonce": "Pour m < 2, les solutions de \\frac{x-m}{m-2} > 3 forment S = ]4m-6\\,;\\,+\\infty[", "reponse": false, "explication": "m-2 < 0 donc on inverse l'inégalité : x-m < 3(m-2) = 3m-6, soit x < 4m-6. Donc S = ]-∞; 4m-6[."}
+        {
+          "id": "QCM2025-II-A",
+          "enonce": "L'équation x^2 + (m+1)x + 1 = 0 n'admet pas de solution réelle ssi m \\in ]-3\\,;\\,1[",
+          "reponse": true,
+          "explication": "Discriminant Δ = (m+1)² - 4 = m² + 2m - 3 = (m+3)(m-1). Δ < 0 ssi m ∈ ]-3;1[."
+        },
+        {
+          "id": "QCM2025-II-B",
+          "enonce": "Pour m < 2, les solutions de \\frac{x-m}{m-2} > 3 forment S = ]4m-6\\,;\\,+\\infty[",
+          "reponse": false,
+          "explication": "m-2 < 0 donc on inverse l'inégalité : x-m < 3(m-2) = 3m-6, soit x < 4m-6. Donc S = ]-∞; 4m-6[."
+        }
       ],
       "indice": "Attention au signe du dénominateur quand on multiplie une inéquation !"
     },
@@ -31,9 +71,24 @@
       "titre": "Implications sur les réels",
       "chapitre": "calculs_algebre",
       "questions": [
-        {"id": "QCM2025-III-A", "enonce": "Si x \\leq 2y alors x^2 \\leq 2xy", "reponse": false, "explication": "Contre-exemple : x = -1, y = 0. On a -1 ≤ 0 mais (-1)² = 1 > 0 = 2(-1)(0)."},
-        {"id": "QCM2025-III-B", "enonce": "Si x \\leq 2y alors 2x \\leq x + 2y", "reponse": true, "explication": "x ≤ 2y ⟹ x - 2y ≤ 0 ⟹ 2x - x - 2y ≤ 0 ⟹ 2x ≤ x + 2y."},
-        {"id": "QCM2025-III-C", "enonce": "Si x \\leq 2y alors x^2 \\leq 4y^2", "reponse": false, "explication": "Contre-exemple : x = -3, y = 1. On a -3 ≤ 2 mais (-3)² = 9 > 4 = 4(1)²."}
+        {
+          "id": "QCM2025-III-A",
+          "enonce": "Si x \\leq 2y alors x^2 \\leq 2xy",
+          "reponse": false,
+          "explication": "Contre-exemple : x = -1, y = 0. On a -1 ≤ 0 mais (-1)² = 1 > 0 = 2(-1)(0)."
+        },
+        {
+          "id": "QCM2025-III-B",
+          "enonce": "Si x \\leq 2y alors 2x \\leq x + 2y",
+          "reponse": true,
+          "explication": "x ≤ 2y ⟹ x - 2y ≤ 0 ⟹ 2x - x - 2y ≤ 0 ⟹ 2x ≤ x + 2y."
+        },
+        {
+          "id": "QCM2025-III-C",
+          "enonce": "Si x \\leq 2y alors x^2 \\leq 4y^2",
+          "reponse": false,
+          "explication": "Contre-exemple : x = -3, y = 1. On a -3 ≤ 2 mais (-3)² = 9 > 4 = 4(1)²."
+        }
       ],
       "indice": "Pour réfuter une implication, un seul contre-exemple suffit. Pensez aux nombres négatifs !"
     },
@@ -41,57 +96,142 @@
       "id": "QCM2025-IV",
       "titre": "Fonctions exp et ln",
       "chapitre": "fonctions",
+      "enonce_commun": "Soient f la fonction définie sur \\mathbb{R} par f(x) = \\frac{e^x - 1}{e^x + 1} et C_f sa courbe représentative dans un repère orthonormé.",
       "questions": [
-        {"id": "QCM2025-IV-A", "enonce": "f(x) = \\frac{e^x - 1}{e^x + 1} admet une asymptote y = 1", "reponse": true, "explication": "lim_{x→+∞} f(x) = lim (e^x/e^x) = 1 en divisant par e^x."},
-        {"id": "QCM2025-IV-B", "enonce": "f(x) = \\frac{e^x - 1}{e^x + 1} admet une asymptote y = -1", "reponse": true, "explication": "lim_{x→-∞} f(x) = (0-1)/(0+1) = -1."},
-        {"id": "QCM2025-IV-C", "enonce": "f(x) = \\frac{e^x - 1}{e^x + 1} admet une asymptote x = 1", "reponse": false, "explication": "f est définie sur ℝ entier (e^x + 1 > 0 toujours), pas d'asymptote verticale."},
-        {"id": "QCM2025-IV-D", "enonce": "f est décroissante sur \\mathbb{R}", "reponse": false, "explication": "f'(x) = 2e^x/(e^x+1)² > 0 pour tout x, donc f est strictement croissante."},
-        {"id": "QCM2025-IV-E", "enonce": "\\forall x \\in \\mathbb{R}, f(-x) = \\frac{1 - e^x}{1 + e^x}", "reponse": true, "explication": "f(-x) = (e^{-x}-1)/(e^{-x}+1). En multipliant par e^x : (1-e^x)/(1+e^x)."}
+        {
+          "id": "QCM2025-IV-A",
+          "enonce": "C_f admet une asymptote d'équation y = 1.",
+          "reponse": true,
+          "explication": "\\lim_{x \\to +\\infty} f(x) = \\lim \\frac{e^x}{e^x} = 1 (en divisant numérateur et dénominateur par e^x)."
+        },
+        {
+          "id": "QCM2025-IV-B",
+          "enonce": "C_f admet une asymptote d'équation y = -1.",
+          "reponse": true,
+          "explication": "\\lim_{x \\to -\\infty} f(x) = \\frac{0-1}{0+1} = -1."
+        },
+        {
+          "id": "QCM2025-IV-C",
+          "enonce": "C_f admet une asymptote d'équation x = 1.",
+          "reponse": false,
+          "explication": "f est définie sur \\mathbb{R} entier car e^x + 1 > 0 pour tout x. Pas d'asymptote verticale."
+        },
+        {
+          "id": "QCM2025-IV-D",
+          "enonce": "f est décroissante sur \\mathbb{R}.",
+          "reponse": false,
+          "explication": "f'(x) = \\frac{2e^x}{(e^x+1)^2} > 0 pour tout x, donc f est strictement croissante."
+        },
+        {
+          "id": "QCM2025-IV-E",
+          "enonce": "Pour tout réel x, f(-x) = \\frac{1 - e^x}{1 + e^x}.",
+          "reponse": true,
+          "explication": "f(-x) = \\frac{e^{-x}-1}{e^{-x}+1}. En multipliant haut et bas par e^x : \\frac{1-e^x}{1+e^x}."
+        }
       ],
-      "indice": "Pour les asymptotes, calculez les limites en +∞ et -∞. Pour la monotonie, étudiez le signe de f'."
+      "indice": "Pour les asymptotes, calculez les limites en +∞ et -∞. Pour la monotonie, calculez f'(x)."
     },
     {
       "id": "QCM2025-V",
-      "titre": "Suites - Encadrement",
+      "titre": "Suites - Encadrement et convergence",
       "chapitre": "suites",
+      "enonce_commun": "Soit (u_n)_{n \\in \\mathbb{N}^*} une suite telle que |u_n - 1| \\leq \\frac{1}{n} pour tout entier naturel n non nul.",
       "questions": [
-        {"id": "QCM2025-V-A", "enonce": "|u_n - 1| \\leq 1/n \\Rightarrow -1 - 1/n \\leq u_n \\leq -1 + 1/n", "reponse": false, "explication": "L'encadrement correct est 1 - 1/n ≤ u_n ≤ 1 + 1/n (centré en 1, pas en -1)."},
-        {"id": "QCM2025-V-B", "enonce": "(u_n) est majorée par 2", "reponse": true, "explication": "u_n ≤ 1 + 1/n ≤ 1 + 1 = 2 pour n ≥ 1."},
-        {"id": "QCM2025-V-C", "enonce": "(u_n) est minorée par 0", "reponse": true, "explication": "u_n ≥ 1 - 1/n ≥ 0 pour n ≥ 1."},
-        {"id": "QCM2025-V-D", "enonce": "(u_n) converge vers 0", "reponse": false, "explication": "Par le théorème des gendarmes, u_n converge vers 1 (pas 0)."}
+        {
+          "id": "QCM2025-V-A",
+          "enonce": "Pour tout n \\geq 1, \\quad -1 - \\frac{1}{n} \\leq u_n \\leq -1 + \\frac{1}{n}.",
+          "reponse": false,
+          "explication": "|u_n - 1| \\leq 1/n signifie 1 - 1/n \\leq u_n \\leq 1 + 1/n. L'encadrement est centré en 1, pas en -1."
+        },
+        {
+          "id": "QCM2025-V-B",
+          "enonce": "(u_n) est majorée par 2.",
+          "reponse": true,
+          "explication": "u_n \\leq 1 + 1/n \\leq 1 + 1 = 2 pour tout n \\geq 1."
+        },
+        {
+          "id": "QCM2025-V-C",
+          "enonce": "(u_n) est minorée par 0.",
+          "reponse": true,
+          "explication": "u_n \\geq 1 - 1/n \\geq 0 pour tout n \\geq 1."
+        },
+        {
+          "id": "QCM2025-V-D",
+          "enonce": "(u_n) converge vers 0.",
+          "reponse": false,
+          "explication": "Par le théorème des gendarmes : 1 - 1/n \\leq u_n \\leq 1 + 1/n et les deux bornes tendent vers 1, donc u_n \\to 1."
+        }
       ],
-      "indice": "|u_n - 1| ≤ 1/n signifie que u_n est dans l'intervalle [1 - 1/n, 1 + 1/n]. La suite est 'piégée' autour de 1."
+      "indice": "|u_n - 1| \\leq 1/n se réécrit comme 1 - 1/n \\leq u_n \\leq 1 + 1/n. La suite est piégée autour de 1, pas de 0."
     },
     {
       "id": "QCM2025-VI",
       "titre": "Suites géométriques - Échiquier",
       "chapitre": "suites",
+      "enonce_commun": "On dispose des grains de riz sur les 64 cases d'un échiquier : un grain sur la première case et on double la quantité d'une case à l'autre.",
       "questions": [
-        {"id": "QCM2025-VI-A", "enonce": "Le nombre de grains sur la dernière case (64e) est 2^{63}", "reponse": true, "explication": "Case 1 : 2^0 = 1 grain, case 2 : 2^1, ..., case n : 2^{n-1}. Case 64 : 2^{63}."},
-        {"id": "QCM2025-VI-B", "enonce": "Le nombre total de grains est 2^{64} - 1", "reponse": true, "explication": "Somme géométrique : 1 + 2 + 4 + ... + 2^{63} = (2^{64} - 1)/(2-1) = 2^{64} - 1."}
+        {
+          "id": "QCM2025-VI-A",
+          "enonce": "Le nombre de grains de riz placés sur la dernière case est 2^{63}.",
+          "reponse": true,
+          "explication": "Case 1 : 2^0 = 1, case 2 : 2^1, ..., case n : 2^{n-1}. Case 64 : 2^{63}."
+        },
+        {
+          "id": "QCM2025-VI-B",
+          "enonce": "Le nombre total de grains de riz placés sur l'échiquier est 2^{64} - 1.",
+          "reponse": true,
+          "explication": "Somme géométrique : \\sum_{k=0}^{63} 2^k = \\frac{2^{64}-1}{2-1} = 2^{64}-1."
+        }
       ],
-      "indice": "La suite des grains par case est géométrique de raison 2 et de premier terme 1. Utilisez la formule de la somme des termes d'une suite géométrique."
+      "indice": "Suite géométrique de raison 2, premier terme 1. Formule de la somme : S = \\frac{q^{n}-1}{q-1}."
     },
     {
       "id": "QCM2025-VII",
       "titre": "Produit scalaire - Vecteurs",
       "chapitre": "geometrie_plan",
+      "enonce_commun": "Dans le plan rapporté à un repère orthonormé, on considère les vecteurs \\vec{u} et \\vec{v} de coordonnées respectives : \\vec{u}\\begin{pmatrix} -3+\\sqrt{6} \\\\ \\sqrt{3}+3\\sqrt{2} \\end{pmatrix} et \\vec{v}\\begin{pmatrix} -3 \\\\ 3\\sqrt{2} \\end{pmatrix}.",
       "questions": [
-        {"id": "QCM2025-VII-A", "enonce": "\\vec{u} \\cdot \\vec{v} = 27 avec \\vec{u}(-3+\\sqrt{6}, \\sqrt{3}+3\\sqrt{2}) et \\vec{v}(-3, 3\\sqrt{2})", "reponse": true, "explication": "u·v = (-3+√6)(-3) + (√3+3√2)(3√2) = 9-3√6 + 3√6+18 = 27."},
-        {"id": "QCM2025-VII-B", "enonce": "\\|\\vec{u}\\| = 2\\sqrt{6}", "reponse": false, "explication": "||u||² = (-3+√6)² + (√3+3√2)² = 9-6√6+6 + 3+6√6+18 = 36. Donc ||u|| = 6, pas 2√6."},
-        {"id": "QCM2025-VII-C", "enonce": "\\|\\vec{v}\\| = 27", "reponse": false, "explication": "||v||² = 9 + 18 = 27, donc ||v|| = √27 = 3√3, pas 27."}
+        {
+          "id": "QCM2025-VII-A",
+          "enonce": "\\vec{u} \\cdot \\vec{v} = 27.",
+          "reponse": true,
+          "explication": "\\vec{u}\\cdot\\vec{v} = (-3+\\sqrt{6})(-3) + (\\sqrt{3}+3\\sqrt{2})(3\\sqrt{2}) = 9-3\\sqrt{6}+3\\sqrt{6}+18 = 27."
+        },
+        {
+          "id": "QCM2025-VII-B",
+          "enonce": "\\|\\vec{u}\\| = 2\\sqrt{6}.",
+          "reponse": false,
+          "explication": "\\|\\vec{u}\\|^2 = (-3+\\sqrt{6})^2 + (\\sqrt{3}+3\\sqrt{2})^2 = 9-6\\sqrt{6}+6+3+6\\sqrt{6}+18 = 36. Donc \\|\\vec{u}\\| = 6."
+        },
+        {
+          "id": "QCM2025-VII-C",
+          "enonce": "\\|\\vec{v}\\| = 27.",
+          "reponse": false,
+          "explication": "\\|\\vec{v}\\|^2 = 9+18 = 27, donc \\|\\vec{v}\\| = 3\\sqrt{3} \\neq 27."
+        }
       ],
-      "indice": "Le produit scalaire u·v = x_u × x_v + y_u × y_v. La norme ||u|| = √(x²+y²). Ne confondez pas ||v||² et ||v|| !"
+      "indice": "\\vec{u}\\cdot\\vec{v} = x_u x_v + y_u y_v. Attention : \\|\\vec{v}\\|^2 = 27 ne signifie pas \\|\\vec{v}\\| = 27 !"
     },
     {
       "id": "QCM2025-VIII",
       "titre": "Produit scalaire - Angles",
       "chapitre": "geometrie_plan",
+      "enonce_commun": "Dans le plan rapporté à un repère orthonormé, on considère les points A, B et C tels que : AB = \\sqrt{3}-1, \\quad \\vec{AB}\\cdot\\vec{AC} = 2 \\quad \\text{et} \\quad \\cos(\\widehat{BAC}) = \\frac{\\sqrt{2}}{2}.",
       "questions": [
-        {"id": "QCM2025-VIII-A", "enonce": "AC = \\sqrt{6} + \\sqrt{2} avec AB = \\sqrt{3}-1, \\vec{AB}\\cdot\\vec{AC} = 2, \\cos(\\widehat{BAC}) = \\frac{\\sqrt{2}}{2}", "reponse": true, "explication": "AB·AC·cos(BAC) = 2, soit (√3-1)·AC·(√2/2) = 2. AC = 4/((√3-1)√2) = 4/(√6-√2) = 4(√6+√2)/4 = √6+√2."},
-        {"id": "QCM2025-VIII-B", "enonce": "L'angle \\widehat{BAC} = 30°", "reponse": false, "explication": "cos(BAC) = √2/2, donc BAC = 45° (pas 30°, qui correspond à cos = √3/2)."}
+        {
+          "id": "QCM2025-VIII-A",
+          "enonce": "AC = \\sqrt{6} + \\sqrt{2}.",
+          "reponse": true,
+          "explication": "\\vec{AB}\\cdot\\vec{AC} = AB \\times AC \\times \\cos(\\widehat{BAC}), soit 2 = (\\sqrt{3}-1) \\times AC \\times \\frac{\\sqrt{2}}{2}. Donc AC = \\frac{4}{(\\sqrt{3}-1)\\sqrt{2}} = \\frac{4(\\sqrt{3}+1)}{2\\sqrt{2}} = \\sqrt{6}+\\sqrt{2}."
+        },
+        {
+          "id": "QCM2025-VIII-B",
+          "enonce": "Une mesure de l'angle \\widehat{BAC} est 30°.",
+          "reponse": false,
+          "explication": "\\cos(\\widehat{BAC}) = \\frac{\\sqrt{2}}{2} correspond à un angle de 45° (et non 30° qui donne \\cos = \\frac{\\sqrt{3}}{2})."
+        }
       ],
-      "indice": "Utilisez la formule AB·AC = ||AB|| × ||AC|| × cos(angle). cos(π/4) = √2/2 et cos(π/6) = √3/2."
+      "indice": "\\cos(\\pi/4) = \\sqrt{2}/2 et \\cos(\\pi/6) = \\sqrt{3}/2. Ne les confondez pas !"
     }
   ]
 }

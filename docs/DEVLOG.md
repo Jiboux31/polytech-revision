@@ -20,3 +20,8 @@
 - SQLite configuré avec aiosqlite (table `progression` et `resultats`).
 - Testé avec Uvicorn en background (`uvicorn main:app &`). Les tests API ont validé le flux de données.
 - Prefix `/api` utilisé pour l'ensemble des routers métier.
+
+## 2026-04-13 — Début Run 2 (Frontend QCM)
+- Validation des specs et définition de la stratégie (ajustement de l'appel `/chapitre` au lieu de `/plan` pour lancer un bloc QCM).
+- Changement du pass state vers `navigate('/qcm/.../result', { state: { resultData } })`.
+- Implémentation du CSS global avec les variables, du index.html avec les fonts Google, et démarrage du codage des composants UI.

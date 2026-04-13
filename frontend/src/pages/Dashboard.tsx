@@ -48,7 +48,7 @@ export default function Dashboard() {
               
               return (
                 <div key={chap} style={{ display: 'flex', alignItems: 'center' }}>
-                  <div style={{ width: '150px', fontWeight: 600 }}>
+                  <div style={{ width: '180px', fontWeight: 600 }}>
                     {chap.replace('_', ' ')}
                   </div>
                   <div style={{ flex: 1, height: '16px', background: '#F3F4F6', borderRadius: '8px', overflow: 'hidden' }}>

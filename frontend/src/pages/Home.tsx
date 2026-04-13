@@ -28,6 +28,12 @@ export default function Home() {
   })
   const progressPercent = total > 0 ? Math.round((correct / total) * 100) : 0
   
+  const handleStartSession = () => {
+    // Dans la vraie vie, on chercherait le premier exercice non fait
+    // Pour l'instant, on redirige vers le plan de révision
+    navigate('/plan')
+  }
+
   return (
     <div className="container">
       <Header title="PolytechRevision" showBack={false} />
@@ -55,13 +61,13 @@ export default function Home() {
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <span style={{ fontSize: '1.5rem' }}>📊</span>
-            <span style={{ fontSize: '1.2rem', fontWeight: 600 }}>Progression globale : {progressPercent}%</span>
+            <span style={{ fontSize: '1.2rem', fontWeight: 600 }}>Taux de réussite : {progressPercent}%</span>
           </div>
         </div>
         
         <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
           <button
-            onClick={() => navigate('/plan')}
+            onClick={handleStartSession}
             style={{
               background: 'var(--accent-blue)',
               color: 'white',

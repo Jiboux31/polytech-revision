@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { fetchExercise, submitQCM, saveResult } from '../services/api'
-import Timer from '../components/Timer'
 import MathRender from '../components/MathRender'
 import VFButton from '../components/VFButton'
+import Header from '../components/Header'
 
 export default function QCM() {
   const { exerciseId } = useParams()
@@ -40,16 +40,14 @@ export default function QCM() {
     try {
       const result = await submitQCM(exerciseId, reponses)
       
-      // Enregistrer chaque question en base via la route progression
-      // Pour le temps_reponse on met 0 par défaut pour le MVP
       for (const detail of result.details) {
         await saveResult({
           question_id: detail.id,
           matiere: exercise.matiere || 'maths_qcm',
           chapitre: exercise.chapitre,
-          est_correct: detail.status === 'correct' ? 2 : detail.status === 'incorrect' ? 0 : 1, // 1 = non_repondu pour ne pas pénaliser autant
+          est_correct: detail.status === 'correct' ? 2 : detail.status === 'incorrect' ? 0 : 1,
           score_obtenu: detail.score,
-          score_max: 1, // QCM = 1 pt par question
+          score_max: 1,
           indice_utilise: hintVisible ? 1 : 0,
           temps_reponse_sec: 30 
         })
@@ -67,21 +65,11 @@ export default function QCM() {
 
   return (
     <div className="container" style={{ maxWidth: '800px' }}>
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '16px 20px',
-        background: 'var(--bg-header)',
-        color: 'white',
-        borderRadius: 'var(--radius)',
-        marginBottom: '24px'
-      }}>
-        <h2 style={{ fontSize: '1.25rem', margin: 0 }}>
-          QCM — Exercice {exercise?.id?.split('-')[1] || exercise?.id} : {exercise?.titre}
-        </h2>
-        <Timer />
-      </div>
+      <Header 
+        title={`QCM — Exercice ${exercise?.id?.split('-')[1] || exercise?.id} : ${exercise?.titre}`} 
+        showDashboard={false} 
+        showBack={true}
+      />
       
       <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', marginBottom: '40px' }}>
         {exercise?.questions?.map((q: any) => (
@@ -134,10 +122,11 @@ export default function QCM() {
             fontSize: '1rem',
             fontWeight: 600,
             borderRadius: 'var(--radius)',
-            cursor: hintVisible ? 'default' : 'pointer'
+            cursor: hintVisible ? 'default' : 'pointer',
+            opacity: exercise?.indice ? 1 : 0.5
           }}
         >
-          💡 Indice
+          {exercise?.indice ? '💡 Indice' : '💡 Aucun indice disponible'}
         </button>
         
         <button

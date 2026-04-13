@@ -1,0 +1,72 @@
+{
+  "annee": 0,
+  "matiere": "maths_qcm",
+  "source": "genere",
+  "exercices": [
+    {
+      "id": "GEN-PROBA-01",
+      "titre": "Probabilités conditionnelles",
+      "chapitre": "probabilites",
+      "enonce_commun": "Une usine produit des pièces. 5% sont défectueuses. Un test de contrôle détecte 90% des pièces défectueuses (vrai positif) mais déclare défectueuses 3% des pièces conformes (faux positif). On note D l'événement « la pièce est défectueuse » et T l'événement « le test est positif ».",
+      "questions": [
+        {"id": "GEN-PROBA-01-A", "enonce": "P(D) = 0{,}05.", "reponse": true, "explication": "5% de pièces défectueuses, directement donné dans l'énoncé."},
+        {"id": "GEN-PROBA-01-B", "enonce": "P_D(T) = 0{,}90.", "reponse": true, "explication": "Le test détecte 90% des pièces défectueuses : P_D(T) = 0,90."},
+        {"id": "GEN-PROBA-01-C", "enonce": "P(T) = 0{,}045 + 0{,}0285 = 0{,}0735.", "reponse": true, "explication": "P(T) = P(D)P_D(T) + P(\\bar{D})P_{\\bar{D}}(T) = 0,05 \\times 0,90 + 0,95 \\times 0,03 = 0,045 + 0,0285 = 0,0735."},
+        {"id": "GEN-PROBA-01-D", "enonce": "P_T(D) > 0{,}5, c'est-à-dire qu'une pièce testée positive est plus probablement défectueuse que conforme.", "reponse": true, "explication": "P_T(D) = P(D \\cap T)/P(T) = 0,045/0,0735 \\approx 0,612 > 0,5."}
+      ],
+      "indice": "Utilisez la formule des probabilités totales pour P(T) puis la formule de Bayes pour P_T(D)."
+    },
+    {
+      "id": "GEN-PROBA-02",
+      "titre": "Loi binomiale - Calculs",
+      "chapitre": "probabilites",
+      "enonce_commun": "On considère une variable aléatoire X suivant une loi binomiale B(10\\,;\\,0{,}3).",
+      "questions": [
+        {"id": "GEN-PROBA-02-A", "enonce": "E(X) = 3.", "reponse": true, "explication": "E(X) = np = 10 \\times 0,3 = 3."},
+        {"id": "GEN-PROBA-02-B", "enonce": "V(X) = 2{,}1.", "reponse": true, "explication": "V(X) = np(1-p) = 10 \\times 0,3 \\times 0,7 = 2,1."},
+        {"id": "GEN-PROBA-02-C", "enonce": "P(X = 0) = 0{,}7^{10}.", "reponse": true, "explication": "P(X=0) = \\binom{10}{0} \\times 0,3^0 \\times 0,7^{10} = 0,7^{10} \\approx 0,028."},
+        {"id": "GEN-PROBA-02-D", "enonce": "P(X \\geq 1) = 1 - 0{,}3^{10}.", "reponse": false, "explication": "P(X \\geq 1) = 1 - P(X=0) = 1 - 0,7^{10} \\approx 0,972. L'erreur est de confondre avec 1 - 0,3^{10}."}
+      ],
+      "indice": "X \\sim B(n,p) : E(X)=np, V(X)=np(1-p), P(X=k) = \\binom{n}{k}p^k(1-p)^{n-k}."
+    },
+    {
+      "id": "GEN-PROBA-03",
+      "titre": "Indépendance et probabilités",
+      "chapitre": "probabilites",
+      "enonce_commun": "On lance deux dés équilibrés. On note A l'événement « le premier dé donne un 6 » et B l'événement « la somme des deux dés vaut 7 ».",
+      "questions": [
+        {"id": "GEN-PROBA-03-A", "enonce": "P(A) = \\frac{1}{6}.", "reponse": true, "explication": "Le premier dé a 6 faces équiprobables."},
+        {"id": "GEN-PROBA-03-B", "enonce": "P(B) = \\frac{1}{6}.", "reponse": true, "explication": "Les couples donnant une somme de 7 sont (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) : 6 sur 36 = 1/6."},
+        {"id": "GEN-PROBA-03-C", "enonce": "P(A \\cap B) = \\frac{1}{36}.", "reponse": true, "explication": "A \\cap B = « premier dé = 6 ET somme = 7 » = (6,1). Un seul couple sur 36."},
+        {"id": "GEN-PROBA-03-D", "enonce": "A et B sont indépendants.", "reponse": true, "explication": "P(A) \\times P(B) = 1/6 \\times 1/6 = 1/36 = P(A \\cap B). Les événements sont indépendants."}
+      ],
+      "indice": "Deux événements sont indépendants si P(A \\cap B) = P(A) \\times P(B). Comptez les cas favorables sur 36."
+    },
+    {
+      "id": "GEN-PROBA-04",
+      "titre": "Variable aléatoire et espérance",
+      "chapitre": "probabilites",
+      "enonce_commun": "Un jeu de hasard consiste à tirer une boule dans une urne contenant 3 boules rouges et 7 boules blanches. Si la boule est rouge, le joueur gagne 5€. Si elle est blanche, il perd 2€. On note X le gain algébrique du joueur.",
+      "questions": [
+        {"id": "GEN-PROBA-04-A", "enonce": "P(X = 5) = 0{,}3.", "reponse": true, "explication": "3 boules rouges sur 10 : P(rouge) = 3/10 = 0,3."},
+        {"id": "GEN-PROBA-04-B", "enonce": "E(X) = 0{,}1.", "reponse": true, "explication": "E(X) = 5 \\times 0,3 + (-2) \\times 0,7 = 1,5 - 1,4 = 0,1€."},
+        {"id": "GEN-PROBA-04-C", "enonce": "Le jeu est favorable au joueur.", "reponse": true, "explication": "E(X) = 0,1 > 0 donc en moyenne le joueur gagne à long terme."},
+        {"id": "GEN-PROBA-04-D", "enonce": "Si on joue 100 fois, on peut espérer gagner environ 10€.", "reponse": true, "explication": "Gain espéré sur 100 parties = 100 \\times E(X) = 100 \\times 0,1 = 10€."}
+      ],
+      "indice": "E(X) = \\sum x_i \\times P(X = x_i). Le jeu est favorable si E(X) > 0."
+    },
+    {
+      "id": "GEN-PROBA-05",
+      "titre": "Arbre de probabilités",
+      "chapitre": "probabilites",
+      "enonce_commun": "Un étudiant passe deux épreuves indépendantes. Sa probabilité de réussir la première est 0{,}8 et celle de réussir la seconde est 0{,}6. On note R_1 et R_2 les événements « réussir l'épreuve 1 » et « réussir l'épreuve 2 ».",
+      "questions": [
+        {"id": "GEN-PROBA-05-A", "enonce": "P(R_1 \\cap R_2) = 0{,}48.", "reponse": true, "explication": "Épreuves indépendantes : P(R_1 \\cap R_2) = P(R_1) \\times P(R_2) = 0,8 \\times 0,6 = 0,48."},
+        {"id": "GEN-PROBA-05-B", "enonce": "La probabilité de rater les deux épreuves est 0{,}08.", "reponse": true, "explication": "P(\\bar{R_1} \\cap \\bar{R_2}) = 0,2 \\times 0,4 = 0,08."},
+        {"id": "GEN-PROBA-05-C", "enonce": "La probabilité de réussir exactement une épreuve est 0{,}52.", "reponse": false, "explication": "P(exactement 1) = P(R_1 \\cap \\bar{R_2}) + P(\\bar{R_1} \\cap R_2) = 0,8 \\times 0,4 + 0,2 \\times 0,6 = 0,32 + 0,12 = 0,44."},
+        {"id": "GEN-PROBA-05-D", "enonce": "La probabilité de réussir au moins une épreuve est 0{,}92.", "reponse": true, "explication": "P(au moins 1) = 1 - P(aucune) = 1 - 0,08 = 0,92."}
+      ],
+      "indice": "Indépendance ⟹ P(A ∩ B) = P(A) × P(B). Pour « au moins une », utilisez le complémentaire."
+    }
+  ]
+}
