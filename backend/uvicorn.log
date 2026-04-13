@@ -1,0 +1,18 @@
+INFO:     Started server process [3677758]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8042 (Press CTRL+C to quit)
+INFO:     127.0.0.1:34994 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35006 - "GET /exercices/plan HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35010 - "GET /exercices/chapitres?matiere=maths HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35024 - "GET /exercices/questions?matiere=maths&limit=1 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35034 - "GET /progression/Garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57730 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57744 - "GET /api/exercices/chapitres?matiere=maths HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57752 - "GET /api/exercices/questions?matiere=maths&limit=1 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57760 - "GET /api/progression/Garance HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59984 - "GET /api/exercices/chapitres/maths_qcm HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59996 - "GET /api/exercices/chapitre/maths_qcm/calculs_algebre HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59998 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60000 - "POST /api/progression/resultat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38534 - "POST /api/correction/qcm HTTP/1.1" 200 OK
