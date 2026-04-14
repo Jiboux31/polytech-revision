@@ -15,6 +15,11 @@ export async function fetchChapterExercises(matiere: string, chapitre: string) {
   return res.json()
 }
 
+export async function fetchRedigeExercises(matiere: string, chapitre: string) {
+  const res = await fetch(`${API_BASE}/exercices/redige/${matiere}/${chapitre}`)
+  return res.json()
+}
+
 export async function submitQCM(exerciseId: string, reponses: Record<string, boolean | null>) {
   const res = await fetch(`${API_BASE}/correction/qcm`, {
     method: 'POST',

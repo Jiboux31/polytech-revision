@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { fetchPlan, fetchChapterExercises, fetchProgression } from '../services/api'
+import { fetchPlan, fetchChapterExercises, fetchRedigeExercises, fetchProgression } from '../services/api'
 import Header from '../components/Header'
 
 export default function RevisionPlan() {
@@ -31,13 +31,21 @@ export default function RevisionPlan() {
   }
   
   const handleLaunch = async (matiere: string, chapitre: string) => {
-    if (matiere !== 'maths_qcm') return // Pas encore implémenté
     try {
-      const data = await fetchChapterExercises(matiere, chapitre)
-      if (data.exercices && data.exercices.length > 0) {
-        navigate(`/qcm/${data.exercices[0].id}`)
+      if (matiere === 'maths_qcm') {
+        const data = await fetchChapterExercises(matiere, chapitre)
+        if (data.exercices && data.exercices.length > 0) {
+          navigate(`/qcm/${data.exercices[0].id}`)
+        } else {
+          alert("Aucun exercice QCM disponible pour ce chapitre.")
+        }
       } else {
-        alert("Aucun exercice disponible pour ce chapitre.")
+        const data = await fetchRedigeExercises(matiere, chapitre)
+        if (data.exercices && data.exercices.length > 0) {
+          navigate(`/redige/${data.exercices[0].id}`)
+        } else {
+          alert("Aucun exercice rédigé disponible pour ce chapitre.")
+        }
       }
     } catch (e) {
       console.error(e)
@@ -59,7 +67,7 @@ export default function RevisionPlan() {
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
             {jour.blocs.map((bloc: any, idx: number) => {
-              const isAvailable = bloc.matiere === 'maths_qcm'
+              const isAvailable = true // Tous les modules sont dispo au run 3
               
               return (
                 <div key={idx} style={{
@@ -96,7 +104,7 @@ export default function RevisionPlan() {
                       width: '100%'
                     }}
                   >
-                    {isAvailable ? 'Lancer' : 'Bientôt'}
+                    Lancer
                   </button>
                 </div>
               )

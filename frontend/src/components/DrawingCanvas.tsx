@@ -1,0 +1,161 @@
+import { useRef, useEffect, useState, useCallback } from 'react'
+import { fabric } from 'fabric'
+
+interface Props {
+  onExport: (base64: string) => void
+  width?: number
+  height?: number
+}
+
+export default function DrawingCanvas({ onExport, width = 900, height = 400 }: Props) {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const fabricRef = useRef<fabric.Canvas | null>(null)
+  const [brushColor, setBrushColor] = useState('#1A1A2E')
+  const [brushWidth, setBrushWidth] = useState(2)
+  const [isEraser, setIsEraser] = useState(false)
+
+  useEffect(() => {
+    if (!canvasRef.current) return
+    
+    // @ts-ignore - pour la compatibilité fabric 5/6/7
+    const canvas = new fabric.Canvas(canvasRef.current, {
+      isDrawingMode: true,
+      backgroundColor: '#FFFFFF',
+      width,
+      height
+    })
+    
+    // @ts-ignore
+    canvas.freeDrawingBrush = new fabric.PencilBrush(canvas)
+    // @ts-ignore
+    canvas.freeDrawingBrush.color = brushColor
+    // @ts-ignore
+    canvas.freeDrawingBrush.width = brushWidth
+    
+    fabricRef.current = canvas
+    
+    return () => { canvas.dispose() }
+  }, [width, height])
+
+  useEffect(() => {
+    if (!fabricRef.current) return
+    // @ts-ignore
+    const brush = fabricRef.current.freeDrawingBrush
+    if (isEraser) {
+      brush.color = '#FFFFFF'
+      brush.width = 20
+    } else {
+      brush.color = brushColor
+      brush.width = brushWidth
+    }
+  }, [brushColor, brushWidth, isEraser])
+
+  const handleClear = useCallback(() => {
+    if (!fabricRef.current) return
+    fabricRef.current.clear()
+    fabricRef.current.backgroundColor = '#FFFFFF'
+    fabricRef.current.renderAll()
+  }, [])
+
+  const handleUndo = useCallback(() => {
+    if (!fabricRef.current) return
+    const objects = fabricRef.current.getObjects()
+    if (objects.length > 0) {
+      fabricRef.current.remove(objects[objects.length - 1])
+      fabricRef.current.renderAll()
+    }
+  }, [])
+
+  const handleExport = useCallback(() => {
+    if (!fabricRef.current) return
+    const objects = fabricRef.current.getObjects()
+    if (objects.length === 0) {
+      alert("Tu n'as encore rien écrit ! Utilise le stylet pour répondre.")
+      return
+    }
+    const dataUrl = fabricRef.current.toDataURL({ format: 'png', quality: 0.9 })
+    const base64 = dataUrl.split(',')[1]
+    onExport(base64)
+  }, [onExport])
+
+  const toolbarStyle: React.CSSProperties = {
+    display: 'flex',
+    gap: '8px',
+    alignItems: 'center',
+    padding: '8px 12px',
+    background: '#F3F4F6',
+    borderRadius: '8px 8px 0 0',
+    flexWrap: 'wrap'
+  }
+
+  const btnStyle = (active?: boolean): React.CSSProperties => ({
+    padding: '8px 16px',
+    borderRadius: '8px',
+    border: active ? '2px solid var(--accent-blue)' : '1px solid #D1D5DB',
+    background: active ? '#EFF6FF' : 'white',
+    cursor: 'pointer',
+    fontSize: '0.9rem',
+    fontWeight: active ? 600 : 400,
+    minHeight: '44px'
+  })
+
+  return (
+    <div style={{ border: '1px solid #E5E7EB', borderRadius: 'var(--radius)', overflow: 'hidden' }}>
+      <div style={toolbarStyle}>
+        {['#1A1A2E', '#2563EB', '#DC2626'].map(c => (
+          <button
+            key={c}
+            onClick={() => { setBrushColor(c); setIsEraser(false) }}
+            style={{
+              width: 32, height: 32, borderRadius: '50%',
+              background: c,
+              border: brushColor === c && !isEraser ? '3px solid var(--accent-blue)' : '2px solid #D1D5DB',
+              cursor: 'pointer'
+            }}
+          />
+        ))}
+        
+        <div style={{ width: 1, height: 24, background: '#D1D5DB', margin: '0 4px' }} />
+        
+        {[1, 2, 4].map(w => (
+          <button
+            key={w}
+            onClick={() => { setBrushWidth(w); setIsEraser(false) }}
+            style={btnStyle(brushWidth === w && !isEraser)}
+          >
+            {'─'.repeat(w)}
+          </button>
+        ))}
+        
+        <div style={{ width: 1, height: 24, background: '#D1D5DB', margin: '0 4px' }} />
+        
+        <button onClick={() => setIsEraser(!isEraser)} style={btnStyle(isEraser)}>
+          🧹 Gomme
+        </button>
+        <button onClick={handleUndo} style={btnStyle()}>
+          ↩️ Annuler
+        </button>
+        <button onClick={handleClear} style={btnStyle()}>
+          🗑️ Effacer tout
+        </button>
+        
+        <div style={{ flex: 1 }} />
+        
+        <button
+          onClick={handleExport}
+          style={{
+            ...btnStyle(),
+            background: 'var(--accent-blue)',
+            color: 'white',
+            border: 'none',
+            fontWeight: 600
+          }}
+        >
+          ✅ Valider ma réponse
+        </button>
+      </div>
+      
+      <canvas ref={canvasRef} style={{ display: 'block', touchAction: 'none' }} />
+    </div>
+  )
+}

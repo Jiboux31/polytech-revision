@@ -1,0 +1,87 @@
+import os
+import json
+import base64
+import httpx
+from config import settings
+
+GEMINI_API_URL = settings.GEMINI_API_URL
+
+async def call_gemini_vision(image_base64: str, prompt: str, model: str = None) -> dict:
+    """Appelle Gemini avec une image et un prompt texte."""
+    model = model or settings.GEMINI_MODEL_FAST
+    url = f"{GEMINI_API_URL}/{model}:generateContent?key={settings.GEMINI_API_KEY}"
+    
+    payload = {
+        "contents": [{
+            "parts": [
+                {"text": prompt},
+                {
+                    "inline_data": {
+                        "mime_type": "image/png",
+                        "data": image_base64
+                    }
+                }
+            ]
+        }],
+        "generationConfig": {
+            "temperature": 0.2,
+            "maxOutputTokens": 2048,
+            "responseMimeType": "application/json"
+        }
+    }
+    
+    async with httpx.AsyncClient(timeout=30.0) as client:
+        response = await client.post(url, json=payload)
+        response.raise_for_status()
+        data = response.json()
+    
+    # Extraire le texte de la réponse Gemini
+    try:
+        text = data["candidates"][0]["content"]["parts"][0]["text"]
+        return json.loads(text)
+    except (KeyError, IndexError, json.JSONDecodeError):
+        # Fallback si le JSON est mal formé
+        raw = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "")
+        return {"transcription": raw, "est_correct": 0, "feedback": "Erreur d'analyse de la réponse.", "cours_rappel": ""}
+
+
+async def correct_handwritten_answer(
+    image_base64: str,
+    enonce_court: str,
+    reponse_attendue: str,
+    cours_associe: str,
+    matiere: str
+) -> dict:
+    """Corrige une réponse manuscrite via Gemini Vision."""
+    
+    prompt = f"""Tu es un correcteur bienveillant du concours Geipi Polytech pour une élève de Terminale qui s'appelle Garance.
+
+MATIÈRE : {matiere}
+QUESTION : {enonce_court}
+RÉPONSE ATTENDUE : {reponse_attendue}
+
+INSTRUCTIONS :
+1. Transcris d'abord le texte manuscrit visible sur l'image (formules, texte, schémas décrits).
+2. Compare avec la réponse attendue.
+3. Évalue : 2 = correct, 1 = partiellement correct, 0 = incorrect ou vide.
+4. Rédige un feedback adapté au niveau de réussite.
+
+RÈGLES DE FEEDBACK :
+- Si correct (2) : un message d'encouragement court et chaleureux. Pas besoin de rappel de cours.
+- Si partiellement correct (1) : valorise ce qui est bon, puis explique l'erreur avec le rappel de cours suivant, et enfin donne la réponse complète.
+- Si incorrect ou vide (0) : pas de jugement négatif, rappelle le cours ci-dessous, puis donne la réponse expliquée pas à pas.
+
+COURS À RAPPELER (si nécessaire) :
+{cours_associe}
+
+Réponds UNIQUEMENT en JSON avec cette structure exacte :
+{{
+  "transcription": "ce que tu lis sur l'image",
+  "est_correct": 0 ou 1 ou 2,
+  "parties_correctes": "ce qui est juste dans la réponse (vide si rien)",
+  "erreurs": "les erreurs identifiées (vide si tout est juste)",
+  "feedback": "le message complet pour Garance",
+  "cours_rappel": "le rappel de cours si nécessaire (vide si correct)"
+}}"""
+
+    return await call_gemini_vision(image_base64, prompt)

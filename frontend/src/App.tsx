@@ -4,6 +4,7 @@ import RevisionPlan from './pages/RevisionPlan'
 import QCM from './pages/QCM'
 import QCMResult from './pages/QCMResult'
 import Dashboard from './pages/Dashboard'
+import ExerciceRedige from './pages/ExerciceRedige'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/plan" element={<RevisionPlan />} />
         <Route path="/qcm/:exerciseId" element={<QCM />} />
         <Route path="/qcm/:exerciseId/result" element={<QCMResult />} />
+        <Route path="/redige/:exerciseId" element={<ExerciceRedige />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
