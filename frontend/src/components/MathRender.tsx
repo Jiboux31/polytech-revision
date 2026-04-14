@@ -11,29 +11,40 @@ export default function MathRender({ latex, display = false }: Props) {
   const ref = useRef<HTMLSpanElement>(null)
   
   useEffect(() => {
-    if (ref.current) {
+    if (ref.current && latex) {
+      const text = String(latex)
+      
+      // Si le texte ne contient pas de délimiteurs LaTeX $ ou \, on l'affiche simplement
+      // mais on permet quand même le rendu KaTeX si c'est du pur LaTeX
+      if (!text.includes('$') && !text.includes('\\')) {
+        ref.current.textContent = text
+        return
+      }
+
       try {
-        let finalLatex = latex
+        // Pour le Run 3, on va utiliser une approche simplifiée :
+        // Si ça ressemble à une phrase avec des petits morceaux de math entre $ $
+        // On pourrait utiliser renderMathInElement, mais ici on va juste
+        // s'assurer que si on rend tout le bloc, les espaces sont respectés.
         
-        // Le problème est que KaTeX en mode math écrase tous les espaces.
-        // Si le texte contient des espaces, on transforme les espaces en `~` (espace insécable LaTeX)
-        // ou on insère des espaces LaTeX `\;` entre les mots qui ne sont pas des commandes LaTeX.
+        // Hack: KaTeX ignore les espaces sauf si on utilise \text{} ou \ 
+        // Si c'est un texte complet, on l'enrobe dans \text{} pour KaTeX
+        // Sauf si ça commence par un caractère mathématique typique
+        const isPureMath = text.startsWith('\\') || text.includes('^') || text.includes('_') || text.includes('{')
         
-        // Patch heuristique V3 :
-        // Pour chaque espace dans la chaîne, on le remplace par '\ ' (espace explicite LaTeX)
-        // SAUF si l'espace fait partie d'une commande (ex: "\lim_{x \to \infty}")
-        if (latex.includes(' ')) {
-             // Remplace tous les espaces simples par un espace LaTeX explicite
-             finalLatex = latex.replace(/ /g, '\\ ')
+        let toRender = text
+        if (!isPureMath) {
+            toRender = `\\text{${text}}`
         }
 
-        katex.render(finalLatex, ref.current, {
+        katex.render(toRender, ref.current, {
           displayMode: display,
           throwOnError: false,
-          trust: true
+          trust: true,
+          strict: false
         })
       } catch (e) {
-        ref.current.textContent = latex
+        ref.current.textContent = text
       }
     }
   }, [latex, display])

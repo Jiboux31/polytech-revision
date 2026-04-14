@@ -1,0 +1,120 @@
+.exercice-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.enonce {
+  background: var(--bg-card);
+  padding: 20px;
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.hint-section {
+  margin-bottom: 20px;
+}
+
+.btn-hint {
+  background: none;
+  border: 1px solid var(--accent-blue);
+  color: var(--accent-blue);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-hint:hover {
+  background: var(--accent-blue);
+  color: white;
+}
+
+.hint-box {
+  margin-top: 10px;
+  padding: 15px;
+  background: #FEF3C7;
+  border-left: 4px solid #F59E0B;
+  border-radius: 4px;
+  color: #92400E;
+}
+
+.correction-loading {
+  text-align: center;
+  padding: 50px;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+}
+
+.spinner {
+  font-size: 3rem;
+  animation: spin 2s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.feedback {
+  padding: 25px;
+  border-radius: var(--radius);
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.feedback-correct { background: #DCFCE7; border: 1px solid #22C55E; color: #166534; }
+.feedback-partial { background: #FEF3C7; border: 1px solid #F59E0B; color: #92400E; }
+.feedback-incorrect { background: #FEE2E2; border: 1px solid #EF4444; color: #991B1B; }
+
+.feedback .emoji {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.transcription {
+  font-style: italic;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.feedback-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.cours-rappel, .reponse-attendue {
+  margin-top: 15px;
+  padding: 15px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.btn-next {
+  background: var(--accent-blue);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: var(--radius);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.5);
+}
+
+.btn-next:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4);
+}

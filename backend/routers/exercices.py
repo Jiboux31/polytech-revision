@@ -29,12 +29,9 @@ async def questions_par_chapitre(matiere: str, chapitre: str):
 @router.get("/redige/{matiere}/{chapitre}")
 async def exercices_rediges(matiere: str, chapitre: str):
     """Retourne les exercices rédigés d'un chapitre avec leurs sous-questions."""
-    all_q = load_all_questions()
-    result = []
-    for annale in all_q.get(matiere, []):
-        for ex in annale.get("exercices", []):
-            if ex.get("chapitre") == chapitre and "sous_questions" in ex:
-                result.append(ex)
+    exercises = get_questions_by_chapter(matiere, chapitre)
+    result = [ex for ex in exercises if "sous_questions" in ex]
+    
     if not result:
         raise HTTPException(404, f"Aucun exercice rédigé pour {matiere}/{chapitre}")
     return {"matiere": matiere, "chapitre": chapitre, "exercices": result}

@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState, useCallback } from 'react'
-import { fabric } from 'fabric'
+import { Canvas, PencilBrush } from 'fabric'
 
 interface Props {
   onExport: (base64: string) => void
@@ -9,7 +9,7 @@ interface Props {
 
 export default function DrawingCanvas({ onExport, width = 900, height = 400 }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const fabricRef = useRef<fabric.Canvas | null>(null)
+  const fabricRef = useRef<Canvas | null>(null)
   const [brushColor, setBrushColor] = useState('#1A1A2E')
   const [brushWidth, setBrushWidth] = useState(2)
   const [isEraser, setIsEraser] = useState(false)
@@ -17,19 +17,16 @@ export default function DrawingCanvas({ onExport, width = 900, height = 400 }: P
   useEffect(() => {
     if (!canvasRef.current) return
     
-    // @ts-ignore - pour la compatibilité fabric 5/6/7
-    const canvas = new fabric.Canvas(canvasRef.current, {
+    // Initialisation Fabric 7+
+    const canvas = new Canvas(canvasRef.current, {
       isDrawingMode: true,
       backgroundColor: '#FFFFFF',
       width,
       height
     })
     
-    // @ts-ignore
-    canvas.freeDrawingBrush = new fabric.PencilBrush(canvas)
-    // @ts-ignore
+    canvas.freeDrawingBrush = new PencilBrush(canvas)
     canvas.freeDrawingBrush.color = brushColor
-    // @ts-ignore
     canvas.freeDrawingBrush.width = brushWidth
     
     fabricRef.current = canvas
@@ -39,8 +36,9 @@ export default function DrawingCanvas({ onExport, width = 900, height = 400 }: P
 
   useEffect(() => {
     if (!fabricRef.current) return
-    // @ts-ignore
     const brush = fabricRef.current.freeDrawingBrush
+    if (!brush) return
+
     if (isEraser) {
       brush.color = '#FFFFFF'
       brush.width = 20
@@ -53,7 +51,7 @@ export default function DrawingCanvas({ onExport, width = 900, height = 400 }: P
   const handleClear = useCallback(() => {
     if (!fabricRef.current) return
     fabricRef.current.clear()
-    fabricRef.current.backgroundColor = '#FFFFFF'
+    fabricRef.current.set('backgroundColor', '#FFFFFF')
     fabricRef.current.renderAll()
   }, [])
 

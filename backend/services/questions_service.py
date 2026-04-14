@@ -31,9 +31,21 @@ def load_all_questions() -> dict:
 def get_questions_by_chapter(matiere: str, chapitre: str) -> list:
     all_q = load_all_questions()
     result = []
+    
+    # Mapping pour gérer les chapitres du plan qui n'ont pas d'ID exact dans le JSON
+    # ou pour faire des regroupements thématiques
+    mapping = {
+        "analyse_I": ["analyse_fonctions", "analyse_I"],
+        "analyse_II": ["analyse_fonctions", "analyse_II"],
+        "synthese": ["analyse_fonctions", "suites", "probabilites_avancees", "synthese"],
+        "chimie_generale": ["chimie_organique", "chimie_generale"]
+    }
+    
+    targets = mapping.get(chapitre, [chapitre])
+    
     for annale in all_q.get(matiere, []):
         for exercice in annale.get("exercices", []):
-            if exercice.get("chapitre") == chapitre:
+            if exercice.get("chapitre") in targets:
                 result.append(exercice)
     return result
 

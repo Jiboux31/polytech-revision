@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import DrawingCanvas from '../components/DrawingCanvas'
 import MathRender from '../components/MathRender'
-import { API_BASE } from '../api'
-import './Exercice.css'
+
+const API_BASE = '/api'
 
 export default function ExerciceRedige() {
   const { exerciseId } = useParams()
@@ -88,16 +88,37 @@ export default function ExerciceRedige() {
       </div>
 
       <div className="enonce">
-        <strong>{currentQ.id}</strong>
-        <span><MathRender text={currentQ.enonce_court || ""} /></span>
+        <strong style={{ 
+          minWidth: '120px', 
+          color: 'var(--accent-blue)', 
+          background: 'rgba(59, 130, 246, 0.1)',
+          padding: '4px 8px',
+          borderRadius: '4px',
+          fontSize: '0.9rem',
+          marginRight: '12px',
+          display: 'inline-block',
+          textAlign: 'center'
+        }}>
+          {currentQ.id}
+        </strong>
+        <span style={{ flex: 1 }}>
+          <MathRender latex={currentQ.enonce_court || ""} />
+        </span>
       </div>
 
       {!result && (
         <div className="hint-section">
-          <button onClick={handleHint} disabled={hintUsed} className="btn-hint">
-            💡 {hintUsed ? 'Indice affiché' : "Voir l'indice"}
+          <button onClick={handleHint} disabled={hintUsed} className="btn-hint" style={{ marginBottom: '12px' }}>
+            💡 {hintUsed ? 'Indice utilisé' : "Besoin d'un indice ?"}
           </button>
-          {showHint && <div className="hint-box">💡 <MathRender text={currentQ.indice || ""} /></div>}
+          {showHint && (
+            <div className="hint-box">
+              <div style={{ fontWeight: 600, marginBottom: '8px', fontSize: '0.9rem', color: '#B45309' }}>
+                INDICE
+              </div>
+              <MathRender latex={currentQ.indice || ""} />
+            </div>
+          )}
         </div>
       )}
 
@@ -118,19 +139,19 @@ export default function ExerciceRedige() {
             </div>
             
             {result.transcription && (
-              <p className="transcription">Ta réponse lue : <MathRender text={result.transcription} /></p>
+              <p className="transcription">Ta réponse lue : <MathRender latex={result.transcription} /></p>
             )}
             
-            <p className="feedback-text"><MathRender text={result.feedback || ""} /></p>
+            <p className="feedback-text"><MathRender latex={result.feedback || ""} /></p>
             
             {result.cours_rappel && (
               <div className="cours-rappel">
-                <strong>Rappel de cours:</strong> <MathRender text={result.cours_rappel} />
+                <strong>Rappel de cours:</strong> <MathRender latex={result.cours_rappel} />
               </div>
             )}
             
             <div className="reponse-attendue">
-              <strong>Réponse attendue:</strong> <MathRender text={result.reponse_attendue || ""} />
+              <strong>Réponse attendue:</strong> <MathRender latex={result.reponse_attendue || ""} />
             </div>
           </div>
 

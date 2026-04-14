@@ -10,13 +10,18 @@ export default function RevisionPlan() {
   const [loading, setLoading] = useState(true)
   
   useEffect(() => {
+    console.log("RevisionPlan mounting, fetching data...");
     Promise.all([fetchPlan(), fetchProgression()])
       .then(([planData, progData]) => {
+        console.log("Data fetched:", { planData, progData });
         setPlan(planData)
         setProgression(progData.progression || [])
         setLoading(false)
       })
-      .catch(console.error)
+      .catch(err => {
+        console.error("Fetch error:", err);
+        setLoading(false); // Force stop loading even on error
+      })
   }, [])
   
   const getLevelDots = (matiere: string, chapitre: string) => {
