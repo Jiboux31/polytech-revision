@@ -33,10 +33,9 @@ def get_questions_by_chapter(matiere: str, chapitre: str) -> list:
     result = []
     
     # Mapping pour gérer les chapitres du plan qui n'ont pas d'ID exact dans le JSON
-    # ou pour faire des regroupements thématiques
     mapping = {
         "analyse_I": ["analyse_fonctions", "analyse_I"],
-        "analyse_II": ["analyse_fonctions", "analyse_II"],
+        "analyse_II": ["suites", "analyse_II"], # On dévie sur les suites pour varier le Jour 2
         "synthese": ["analyse_fonctions", "suites", "probabilites_avancees", "synthese"],
         "chimie_generale": ["chimie_organique", "chimie_generale"]
     }

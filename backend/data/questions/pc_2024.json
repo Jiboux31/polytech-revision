@@ -8,12 +8,12 @@
       "id": "PC2024-I",
       "titre": "Diffraction et interférences",
       "chapitre": "ondes_optique",
-      "contexte": "Un faisceau laser de longueur d'onde λ éclaire deux fentes d'Young séparées d'une distance a. On observe une figure d'interférences sur un écran placé à une distance D. L'interfrange est notée i.",
+      "contexte": "Un faisceau laser de longueur d'onde λ éclaire deux fentes d'Young séparées d'une distance a = 0,15 mm. On observe une figure d'interférences sur un écran placé à une distance D = 1,20 m. L'interfrange mesurée sur l'écran est i = 4,0 mm.",
       "points_total": 11,
       "pages_enonce": [8],
       "sous_questions": [
         {"id": "PC2024-I-1", "enonce_court": "Identifier le phénomène optique", "points": 3, "reponse_attendue": "Phénomène de diffraction et interférences lumineuses.", "cours_associe": "Ondes lumineuses.", "indice": "Pensez aux fentes d'Young.", "type_reponse": "manuscrit"},
-        {"id": "PC2024-I-2", "enonce_court": "Calcul de la longueur d'onde", "points": 8, "reponse_attendue": "Application de la formule de l'interfrange i = lambda * D / a.", "cours_associe": "Interférences.", "indice": "Utilisez l'interfrange mesurée sur la figure.", "type_reponse": "manuscrit"}
+        {"id": "PC2024-I-2", "enonce_court": "Calcul de la longueur d'onde λ", "points": 8, "reponse_attendue": "λ = (i * a) / D = (4,0.10^-3 * 0,15.10^-3) / 1,20 = 5,0.10^-7 m = 500 nm.", "cours_associe": "Interférences.", "indice": "Utilisez la formule de l'interfrange i = lambda * D / a.", "type_reponse": "manuscrit"}
       ]
     },
     {

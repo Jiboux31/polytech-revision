@@ -15,6 +15,7 @@ export default function ExerciceRedige() {
   const [loading, setLoading] = useState(false)
   const [result, setResult] = useState<any>(null)
   const [startTime] = useState(Date.now())
+  const [imageLoaded, setImageLoaded] = useState(false)
 
   useEffect(() => {
     fetch(`${API_BASE}/exercices/${exerciseId}`)
@@ -79,13 +80,77 @@ export default function ExerciceRedige() {
   return (
     <div className="exercice-page">
       <div className="header">
-        <div>
-          <h2>{exercise.titre}</h2>
-          <span className="subtitle">
-            Question {currentQIndex + 1}/{questions.length} — {currentQ.points} pts
-          </span>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+          <div>
+            <h2 style={{ fontSize: '1.4rem', color: 'var(--bg-header)' }}>{exercise.titre}</h2>
+            <span className="subtitle">
+              Question {currentQIndex + 1}/{questions.length} — {currentQ.points} pts
+            </span>
+          </div>
+          <button onClick={() => navigate('/plan')} className="btn-back-plan">
+            📅 Plan
+          </button>
         </div>
       </div>
+
+      {/* Énoncé complet depuis le PDF */}
+      {exercise.source_pdf && exercise.pages_enonce && (
+        <div style={{
+          marginBottom: 20,
+          background: 'white',
+          borderRadius: '8px',
+          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+          overflow: 'hidden',
+          border: '1px solid #E5E7EB'
+        }}>
+          <div style={{
+            padding: '8px 16px',
+            background: '#F0F4FF',
+            borderBottom: '1px solid #E5E7EB',
+            fontSize: '0.85rem',
+            color: '#3B82F6',
+            fontWeight: 600
+          }}>
+            📄 Énoncé complet — Concours Geipi Polytech {exercise.annee}
+          </div>
+          {exercise.pages_enonce.map((page: number) => (
+            <div key={page} style={{ position: 'relative', minHeight: !imageLoaded ? '200px' : 'auto' }}>
+              {!imageLoaded && (
+                <div style={{ padding: 40, textAlign: 'center', color: '#6B7280' }}>
+                  Chargement de l'énoncé...
+                </div>
+              )}
+              <img
+                src={`${API_BASE}/exercices/pdf-page/${exercise.source_pdf}/${page}`}
+                alt={`Énoncé page ${page}`}
+                onLoad={() => setImageLoaded(true)}
+                style={{
+                  width: '100%',
+                  display: 'block',
+                  opacity: imageLoaded ? 1 : 0,
+                  transition: 'opacity 0.3s'
+                }}
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {exercise.contexte && (
+        <div className="context-box" style={{
+          background: '#F0F4F8',
+          borderLeft: '4px solid var(--accent-blue)',
+          padding: '16px',
+          marginBottom: '20px',
+          borderRadius: '4px',
+          fontSize: '0.95rem',
+          color: '#334E68',
+          lineHeight: '1.6'
+        }}>
+          <strong>Contexte :</strong> <MathRender latex={exercise.contexte} />
+        </div>
+      )}
 
       <div className="enonce">
         <strong style={{ 
@@ -95,13 +160,13 @@ export default function ExerciceRedige() {
           padding: '4px 8px',
           borderRadius: '4px',
           fontSize: '0.9rem',
-          marginRight: '12px',
+          marginRight: '16px', // Augmenté pour être sûr
           display: 'inline-block',
           textAlign: 'center'
         }}>
           {currentQ.id}
         </strong>
-        <span style={{ flex: 1 }}>
+        <span style={{ flex: 1, marginLeft: '8px' }}>
           <MathRender latex={currentQ.enonce_court || ""} />
         </span>
       </div>

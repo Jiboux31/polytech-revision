@@ -1,4 +1,5 @@
 import katex from 'katex'
+import renderMathInElement from 'katex/dist/contrib/auto-render'
 import 'katex/dist/katex.min.css'
 import { useRef, useEffect } from 'react'
 
@@ -14,40 +15,27 @@ export default function MathRender({ latex, display = false }: Props) {
     if (ref.current && latex) {
       const text = String(latex)
       
-      // Si le texte ne contient pas de délimiteurs LaTeX $ ou \, on l'affiche simplement
-      // mais on permet quand même le rendu KaTeX si c'est du pur LaTeX
-      if (!text.includes('$') && !text.includes('\\')) {
-        ref.current.textContent = text
-        return
-      }
-
+      // 1. On injecte d'abord le texte brut
+      ref.current.textContent = text
+      
+      // 2. On laisse auto-render chercher les formules et les transformer
+      // Il va chercher les délimiteurs standards : $...$, $$...$$, \(...\), \[...\]
       try {
-        // Pour le Run 3, on va utiliser une approche simplifiée :
-        // Si ça ressemble à une phrase avec des petits morceaux de math entre $ $
-        // On pourrait utiliser renderMathInElement, mais ici on va juste
-        // s'assurer que si on rend tout le bloc, les espaces sont respectés.
-        
-        // Hack: KaTeX ignore les espaces sauf si on utilise \text{} ou \ 
-        // Si c'est un texte complet, on l'enrobe dans \text{} pour KaTeX
-        // Sauf si ça commence par un caractère mathématique typique
-        const isPureMath = text.startsWith('\\') || text.includes('^') || text.includes('_') || text.includes('{')
-        
-        let toRender = text
-        if (!isPureMath) {
-            toRender = `\\text{${text}}`
-        }
-
-        katex.render(toRender, ref.current, {
-          displayMode: display,
+        renderMathInElement(ref.current, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false },
+            { left: '\\(', right: '\\)', display: false },
+            { left: '\\[', right: '\\]', display: true }
+          ],
           throwOnError: false,
-          trust: true,
-          strict: false
+          trust: true
         })
       } catch (e) {
-        ref.current.textContent = text
+        console.error("KaTeX auto-render error:", e)
       }
     }
   }, [latex, display])
   
-  return <span ref={ref} />
+  return <span ref={ref} style={{ whiteSpace: 'pre-wrap' }} />
 }

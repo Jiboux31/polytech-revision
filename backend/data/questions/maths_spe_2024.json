@@ -8,6 +8,7 @@
       "id": "MSPE2024-I",
       "titre": "Suites numériques",
       "chapitre": "suites",
+      "contexte": "Soit la suite $(u_n)$ définie par $u_0 = 2$ et, pour tout entier naturel $n$, $u_{n+1} = \\frac{3u_n + 2}{u_n + 4}$.",
       "points_total": 20,
       "pages_enonce": [5],
       "sous_questions": [
@@ -21,11 +22,12 @@
       "id": "MSPE2024-II",
       "titre": "Géométrie dans l'espace",
       "chapitre": "geometrie_espace",
+      "contexte": "Dans l'espace muni d'un repère orthonormé, on considère les points $A(1; 0; 2)$, $B(2; 1; 2)$ et $C(3; 0; 0)$. Soit la droite $\\Delta$ passant par le point $L(1; 2; 3)$ et de vecteur directeur $\\vec{u}(1; -1; 2)$.",
       "points_total": 20,
       "pages_enonce": [6],
       "sous_questions": [
-        {"id": "MSPE2024-II-1", "enonce_court": "Coordonnées de vecteurs et équation de plan", "points": 10, "reponse_attendue": "Vérification des points coplanaires et équation cartésienne.", "cours_associe": "Géométrie analytique dans l'espace.", "indice": "Utilisez le produit scalaire et les vecteurs normaux.", "type_reponse": "manuscrit"},
-        {"id": "MSPE2024-II-2", "enonce_court": "Représentation paramétrique d'une droite", "points": 10, "reponse_attendue": "Système d'équations paramétriques issu d'un point et d'un vecteur directeur.", "cours_associe": "Droite définie par un point et un vecteur directeur.", "indice": "M(x,y,z) appartient à D ssi AM = t.u.", "type_reponse": "manuscrit"}
+        {"id": "MSPE2024-II-1", "enonce_court": "Montrer que les points A, B et C définissent un plan et déterminer son équation cartésienne.", "points": 10, "reponse_attendue": "Equation : $x - y + z - 3 = 0$.", "cours_associe": "Géométrie analytique dans l'espace.", "indice": "Utilisez le produit scalaire pour trouver un vecteur normal.", "type_reponse": "manuscrit"},
+        {"id": "MSPE2024-II-2", "enonce_court": "Donner une représentation paramétrique de la droite $\\Delta$.", "points": 10, "reponse_attendue": "x = 1+t, y = 2-t, z = 3+2t.", "cours_associe": "Droite définie par un point et un vecteur directeur.", "indice": "M(x,y,z) appartient à D ssi LM = t.u.", "type_reponse": "manuscrit"}
       ]
     }
   ]

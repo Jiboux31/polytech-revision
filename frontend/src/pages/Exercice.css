@@ -114,7 +114,29 @@
   box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.5);
 }
 
-.btn-next:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4);
+.btn-back-plan {
+  background: white;
+  color: var(--text-secondary);
+  border: 1px solid #D1D5DB;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.btn-back-plan:hover {
+  background: #F3F4F6;
+  border-color: var(--text-light);
+}
+
+.context-box {
+  background: #F0F4F8;
+  border-left: 4px solid var(--accent-blue);
+  padding: 16px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #334E68;
+  line-height: 1.6;
 }

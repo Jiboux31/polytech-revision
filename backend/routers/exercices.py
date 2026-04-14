@@ -1,10 +1,20 @@
 from fastapi import APIRouter, HTTPException
+from fastapi.responses import FileResponse
 from services.questions_service import (
     load_all_questions, get_questions_by_chapter,
     get_exercise_by_id, get_revision_plan
 )
+from services.pdf_service import get_pdf_page_image
 
 router = APIRouter(prefix="/exercices", tags=["exercices"])
+
+@router.get("/pdf-page/{pdf_filename}/{page_number}")
+async def get_page_image(pdf_filename: str, page_number: int):
+    """Retourne une page de PDF comme image PNG."""
+    image_path = get_pdf_page_image(pdf_filename, page_number)
+    if not image_path:
+        raise HTTPException(404, detail=f"Page {page_number} de {pdf_filename} introuvable")
+    return FileResponse(image_path, media_type="image/png")
 
 @router.get("/plan")
 async def plan_revision():

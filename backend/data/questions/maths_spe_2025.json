@@ -8,6 +8,7 @@
       "id": "MSPE2025-I",
       "titre": "Étude de fonctions g et f",
       "chapitre": "analyse_fonctions",
+      "contexte": "On considère les fonctions $g$ et $f$ définies sur $]0;+\\infty[$ par : $g(x) = 2x^3 + \\ln(x) - 2$ et $f(x) = \\frac{x^3 + 1 - \\ln(x)}{x}$.",
       "points_total": 14,
       "pages_enonce": [4],
       "sous_questions": [
@@ -44,6 +45,7 @@
       "id": "MSPE2025-III",
       "titre": "Probabilités - Dés pipés",
       "chapitre": "probabilites_avancees",
+      "contexte": "Une urne contient 100 dés. 25 dés sont pipés : pour ces dés, la probabilité d'obtenir 6 est $1/2$. Les 75 autres dés sont équilibrés. On tire un dé au hasard et on le lance $n$ fois. On note $T$ l'événement 'le dé est pipé' et $A_n$ l'événement 'on obtient $n$ fois le chiffre 6'.",
       "points_total": 12,
       "pages_enonce": [5],
       "sous_questions": [

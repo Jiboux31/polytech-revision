@@ -1,63 +1,90 @@
-INFO:     Started server process [3990816]
+INFO:     Will watch for changes in these directories: ['/root/.openclaw/workspace-coder/projects/polytech-revision/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8042 (Press CTRL+C to quit)
+INFO:     Started reloader process [4093589] using WatchFiles
+INFO:     Started server process [4093597]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:8042 (Press CTRL+C to quit)
 ✅ GEMINI_API_KEY chargée (39 chars)
 ✅ Modèle principal : gemini-3-flash-preview
-INFO:     127.0.0.1:32794 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:32798 - "GET /api/exercices/plan HTTP/1.1" 200 OK
-INFO:     127.0.0.1:32802 - "GET /api/exercices/chapitre/maths_qcm/Probabilit%C3%A9s HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:32808 - "POST /api/correction/qcm HTTP/1.1" 200 OK
-INFO:     127.0.0.1:32822 - "GET /api/exercices/redige/maths_specialite/Equations%20Diff%C3%A9rentielles HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:54426 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54430 - "GET /api/exercices/plan HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54442 - "GET /api/exercices/chapitre/maths_qcm/probabilites HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54454 - "POST /api/correction/qcm HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54468 - "GET /api/exercices/redige/maths_specialite/analyse_fonctions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54482 - "POST /api/correction/redige HTTP/1.1" 200 OK
-INFO:     82.64.111.133:36033 - "GET /health HTTP/1.1" 200 OK
-INFO:     82.64.111.133:36033 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:33574 - "GET /api/progression/garance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33590 - "GET /api/progression/garance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33594 - "GET /api/exercices/plan HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33598 - "GET /api/progression/garance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33610 - "GET /api/exercices/plan HTTP/1.1" 200 OK
-INFO:     127.0.0.1:33626 - "GET /api/progression/garance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55522 - "GET /api/exercices/chapitre/maths_qcm/calculs_algebre HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55526 - "GET /api/exercices/QCM2025-I HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55540 - "GET /api/exercices/QCM2025-I HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55554 - "GET /api/exercices/plan HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55562 - "GET /api/progression/garance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55564 - "GET /api/exercices/plan HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55580 - "GET /api/progression/garance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55588 - "GET /api/exercices/chapitre/maths_qcm/fonctions HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55590 - "GET /api/exercices/QCM2025-IV HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55604 - "GET /api/exercices/QCM2025-IV HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55618 - "GET /api/exercices/plan HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55626 - "GET /api/progression/garance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55636 - "GET /api/exercices/plan HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55640 - "GET /api/progression/garance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55648 - "GET /api/exercices/chapitre/maths_qcm/suites HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55652 - "GET /api/exercices/QCM2025-V HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55656 - "GET /api/exercices/QCM2025-V HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51694 - "GET /api/exercices/plan HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51708 - "GET /api/progression/garance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51722 - "GET /api/exercices/plan HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51728 - "GET /api/progression/garance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51736 - "GET /api/exercices/redige/maths_specialite/analyse_I HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:53418 - "GET /api/exercices/redige/maths_specialite/analyse_I HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:49768 - "GET /api/exercices/redige/physique_chimie/mecanique HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49778 - "GET /api/exercices/PC2025-I HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49790 - "GET /api/exercices/PC2025-I HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53258 - "GET /api/exercices/plan HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53252 - "GET /api/progression/garance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53262 - "GET /api/exercices/plan HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53270 - "GET /api/progression/garance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60656 - "GET /api/exercices/redige/maths_specialite/analyse_II HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:36282 - "GET /api/exercices/redige/physique_chimie/ondes_optique HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36284 - "GET /api/exercices/PC2024-I HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36300 - "GET /api/exercices/PC2024-I HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36314 - "GET /api/exercices/plan HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36326 - "GET /api/progression/garance HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36342 - "GET /api/exercices/plan HTTP/1.1" 200 OK
-INFO:     127.0.0.1:36346 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39896 - "GET /api/exercices/MSPE2024-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39906 - "GET /api/exercices/MSPE2024-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53036 - "POST /api/correction/redige HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60546 - "POST /api/correction/redige HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45218 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45224 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45232 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45236 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45240 - "GET /api/exercices/redige/maths_specialite/analyse_II HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45244 - "GET /api/exercices/MSPE2024-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45252 - "GET /api/exercices/MSPE2024-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45264 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45274 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45284 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45298 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45308 - "GET /api/exercices/redige/maths_specialite/geometrie_espace HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45322 - "GET /api/exercices/MSPE2024-II HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45338 - "GET /api/exercices/MSPE2024-II HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33476 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33492 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33502 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33506 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33516 - "GET /api/exercices/redige/physique_chimie/ondes_optique HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33520 - "GET /api/exercices/PC2024-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33524 - "GET /api/exercices/PC2024-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43262 - "POST /api/correction/redige HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34958 - "GET /api/exercices/PC2024-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34974 - "GET /api/exercices/PC2024-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47792 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47798 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47814 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47830 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47836 - "GET /api/exercices/redige/physique_chimie/ondes_optique HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47838 - "GET /api/exercices/PC2024-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47852 - "GET /api/exercices/PC2024-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56132 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56148 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56156 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56172 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60142 - "GET /api/exercices/redige/maths_specialite/geometrie_espace HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60146 - "GET /api/exercices/MSPE2024-II HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60148 - "GET /api/exercices/MSPE2024-II HTTP/1.1" 200 OK
+DEBUG: Gemini raw output: {
+  "transcription": "L'image contient uniquement un point d'interrogation '?' dessiné à la main.",
+  "est_correct": 0,
+  "parties_correctes": "Aucune.",
+  "erreurs": "La question n'a pas été traitée.",
+  "feedback": "Bonjour Garance ! Il semble que tu aies eu une petite hésitation sur cet exercice. Ne t'en fais pas, la géométrie dans l'espace est un chapitre qui demande de la rigueur et de la méthode. Pour réussir, il faut d'abord montrer que les points $A$, $B$ et $C$ ne sont pas alignés en vérifiant que les vecteurs $\vec{AB}$ et $\vec{AC}$ ne sont pas colinéaires. Ensuite, on cherche un vecteur normal $\vec{n}(a; b; c)$ au plan. Une fois ce vecteur trouvé, l'équation du plan s'écrit $ax + by + cz + d = 0$. On détermine $d$ en utilisant les coordonnées de l'un des points. La réponse finale à obtenir était $x - y + z - 3 = 0$. Courage, reprends les étapes une par une et tu vas y arriver !",
+  "cours_rappel": "Géométrie analytique dans l'espace : Pour déterminer l'équation cartésienne d'un plan $(ABC)$ : 1. Calculer les coordonnées des vecteurs $\vec{AB}$ et $\vec{AC}$. 2. Vérifier qu'ils ne sont pas colinéaires. 3. Déterminer un vecteur normal $\vec{n}(a; b; c)$ tel que $\vec{n} \cdot \vec{AB} = 0$ et $\vec{n} \cdot \vec{AC} = 0$. 4. L'équation est de la forme $ax + by + cz + d = 0$. 5. Trouver $d$ en remplaçant $x, y, z$ par les coordonnées du point $A$."
+}
+(ou $B$ ou $C$)."
+}
+INFO:     127.0.0.1:34264 - "POST /api/correction/redige HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55676 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55692 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55698 - "GET /api/exercices/plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55710 - "GET /api/progression/garance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55718 - "GET /api/exercices/redige/physique_chimie/ondes_optique HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55728 - "GET /api/exercices/PC2024-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55740 - "GET /api/exercices/PC2024-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53568 - "POST /api/correction/redige HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46824 - "GET /api/exercices/PC2024-I HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46840 - "GET /api/exercices/PC2024-I HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'services/pdf_service.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [4093597]
+INFO:     Started server process [60242]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'routers/exercices.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [60242]
+INFO:     Started server process [60246]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+✅ GEMINI_API_KEY chargée (39 chars)
+✅ Modèle principal : gemini-3-flash-preview
+INFO:     127.0.0.1:48192 - "GET /api/exercices/PC2024-I HTTP/1.1" 200 OK
