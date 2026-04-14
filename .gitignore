@@ -12,3 +12,6 @@ dist/
 .idea/
 .DS_Store
 backend/data/annales/*.pdf
+backend/data/reponses_images/
+backend/uvicorn.log
+frontend/vite.log
