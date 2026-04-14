@@ -1,28 +1,13 @@
 # Journal de développement — PolytechRevision
+## 2026-04-14 — Session de Test Run 3
 
-## 2026-04-12 — Run 0
+### État d'avancement
+**✅ Complété :**
+- Intégration frontend Run 3 (DrawingCanvas, ExerciceRedige, routing)
+- Mapping chapitres corrigé (Analyse I/II, mécanique/optique)
+- Fix bugs affichage (MathRender KaTeX avec auto-render, Fabric.js v7)
+- Réécriture complète JSON questions avec énoncés explicites
+- Tests API backend : 6/6 passed
 
-### Décisions
-- Port backend : 8042
-- Port frontend : 5173
-- BDD : SQLite (fichier unique dans backend/data/)
-- Pas de Docker pour le MVP (trop lourd pour 4Go RAM)
-
-### Notes
-- Python 3.10 via /usr/local/bin/python3.10
-- pip via python3.10 -m pip (pip/pip3 cassé sur Ubuntu 20.04)
-- La dépendance httpx a été mise à jour à `httpx>=0.28.1` pour assurer la compatibilité avec `google-genai==1.14.0`.
-- **Firewall** : Ouverture des ports 5173 (TCP) et 8042 (TCP) via UFW sur le VPS pour permettre l'accès réseau à l'application.
-- **Correction de chemins** : Mise à jour des chemins absolus dans la doc suite au déplacement du projet vers `/root/.openclaw/workspace-coder/projects/polytech-revision`.
-
-## 2026-04-13 — Run 1 (Backend Core)
-- Déploiement de FastAPI avec routers séparés (exercices, correction, progression).
-- SQLite configuré avec aiosqlite (table `progression` et `resultats`).
-- Testé avec Uvicorn en background (`uvicorn main:app &`). Les tests API ont validé le flux de données.
-- Prefix `/api` utilisé pour l'ensemble des routers métier.
-
-## 2026-04-13 — Début Run 2 (Frontend QCM)
-- Validation des specs et définition de la stratégie (ajustement de l'appel `/chapitre` au lieu de `/plan` pour lancer un bloc QCM).
-- Changement du pass state vers `navigate('/qcm/.../result', { state: { resultData } })`.
-- Implémentation du CSS global avec les variables, du index.html avec les fonts Google, et démarrage du codage des composants UI.
-- Fix UX : Suppression des scrolls horizontaux et forçage du wrapping KaTeX pour les énoncés longs.
+**🔄 À finaliser :**
+- Tests E2E avec nouvelles données JSON (requiert redémarrage backend)

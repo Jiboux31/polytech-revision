@@ -6,18 +6,19 @@
   "exercices": [
     {
       "id": "PC2025-I",
-      "titre": "Catapulte spatiale",
+      "titre": "Catapulte spatiale (Mécanique)",
       "chapitre": "mecanique",
+      "contexte": "Un projectile G de masse M = 50 kg est propulsé par un bras de catapulte de rayon R = 40 m. Phase A : accélération circulaire jusqu'à V = 2000 m/s. Phase B : rotation circulaire uniforme à V = 2000 m/s.",
       "points_total": 12,
       "pages_enonce": [6],
       "sous_questions": [
-        {"id": "PC2025-I-1", "enonce_court": "Qualifier le mouvement de G en phase A", "points": 2, "reponse_attendue": "Circulaire accéléré", "type_reponse": "choix", "indice": "La vitesse augmente et le projectile tourne autour du centre C."},
-        {"id": "PC2025-I-2", "enonce_court": "Qualifier le mouvement de G en phase B", "points": 2, "reponse_attendue": "Circulaire uniforme", "type_reponse": "choix", "indice": "En phase B la vitesse est constante et le mouvement est toujours circulaire."},
-        {"id": "PC2025-I-3", "enonce_court": "Composantes de l'accélération en phase B", "points": 2, "reponse_attendue": "a_t = dv/dt = 0, a_n = V²/R = (2000)²/40 = 10⁵ m/s²", "type_reponse": "manuscrit", "indice": "En mouvement uniforme, a_t = 0. L'accélération normale vaut v²/R."},
-        {"id": "PC2025-I-4", "enonce_court": "PFD appliqué au projectile", "points": 1, "reponse_attendue": "Ma = F (2e loi de Newton)", "type_reponse": "manuscrit", "indice": "Σ forces extérieures = m × accélération."},
-        {"id": "PC2025-I-5", "enonce_court": "Composantes de F", "points": 2, "reponse_attendue": "F_t = Ma_t = 0, F_n = Ma_n = 50 × 10⁵ = 5×10⁶ N", "type_reponse": "manuscrit", "indice": "F = Ma, projetez sur les axes tangent et normal."},
-        {"id": "PC2025-I-6", "enonce_court": "Origine de la force F", "points": 1, "reponse_attendue": "Le bras de catapulte et les parois de la chambre d'accélération", "type_reponse": "choix", "indice": "Quels sont les objets en contact avec le projectile ?"},
-        {"id": "PC2025-I-7", "enonce_court": "Paramètres à modifier pour diminuer F", "points": 2, "reponse_attendue": "Diminuer M (masse) et/ou augmenter R (longueur du bras). F_n = Mv²/R.", "type_reponse": "manuscrit", "indice": "F = Mv²/R. Comment réduire F sans changer v ?"}
+        {"id": "PC2025-I-1", "enonce_court": "Qualifier le mouvement de G lors de la phase A.", "points": 2, "reponse_attendue": "Circulaire accéléré", "type_reponse": "choix", "indice": "La vitesse augmente et le projectile tourne autour du centre C."},
+        {"id": "PC2025-I-2", "enonce_court": "Qualifier le mouvement de G lors de la phase B.", "points": 2, "reponse_attendue": "Circulaire uniforme", "type_reponse": "choix", "indice": "En phase B la vitesse est constante et le mouvement est toujours circulaire."},
+        {"id": "PC2025-I-3", "enonce_court": "Calculer les composantes tangentielle $a_t$ et normale $a_n$ de l'accélération en phase B.", "points": 2, "reponse_attendue": "a_t = dv/dt = 0, a_n = V²/R = (2000)²/40 = 10⁵ m/s²", "type_reponse": "manuscrit", "indice": "En mouvement uniforme, a_t = 0. L'accélération normale vaut v²/R."},
+        {"id": "PC2025-I-4", "enonce_court": "Énoncer le Principe Fondamental de la Dynamique (PFD) appliqué au projectile.", "points": 1, "reponse_attendue": "Ma = F (2e loi de Newton)", "type_reponse": "manuscrit", "indice": "Σ forces extérieures = m × accélération."},
+        {"id": "PC2025-I-5", "enonce_court": "Calculer les composantes tangentielle $F_t$ et normale $F_n$ de la force $\\vec{F}$.", "points": 2, "reponse_attendue": "F_t = Ma_t = 0, F_n = Ma_n = 50 × 10⁵ = 5×10⁶ N", "type_reponse": "manuscrit", "indice": "F = Ma, projetez sur les axes tangent et normal."},
+        {"id": "PC2025-I-6", "enonce_court": "Quelle est l'origine physique de la force $\\vec{F}$ ?", "points": 1, "reponse_attendue": "Le bras de catapulte et les parois de la chambre d'accélération", "type_reponse": "choix", "indice": "Quels sont les objets en contact avec le projectile ?"},
+        {"id": "PC2025-I-7", "enonce_court": "Citer les paramètres à modifier pour diminuer l'intensité de $F$.", "points": 2, "reponse_attendue": "Diminuer M (masse) et/ou augmenter R (longueur du bras). F_n = Mv²/R.", "type_reponse": "manuscrit", "indice": "F = Mv²/R. Comment réduire F sans changer v ?"}
       ]
     },
     {
@@ -27,14 +28,14 @@
       "points_total": 14,
       "pages_enonce": [6, 7],
       "sous_questions": [
-        {"id": "PC2025-II-1", "enonce_court": "Formule topologique + nom du produit tBuOH", "points": 2, "reponse_attendue": "2-méthylpropan-2-ol", "type_reponse": "choix", "indice": "tBuOH = (CH₃)₃COH. C'est un alcool tertiaire."},
-        {"id": "PC2025-II-2", "enonce_court": "Famille de réaction", "points": 1, "reponse_attendue": "Substitution", "type_reponse": "choix", "indice": "Br est remplacé par OH : un atome/groupe en remplace un autre."},
-        {"id": "PC2025-II-3", "enonce_court": "Allure de la courbe de conductimétrie", "points": 1, "reponse_attendue": "Courbe 4 (croissance puis plateau)", "type_reponse": "choix", "indice": "Les ions Br⁻ et H₃O⁺ apparaissent progressivement, augmentant σ."},
-        {"id": "PC2025-II-4", "enonce_court": "Tableau d'avancement", "points": 2, "reponse_attendue": "À t½ : n(tBuBr) = 0.025 mol. À l'infini : n(tBuBr) = 0, n(tBuOH) = 0.050 mol.", "type_reponse": "manuscrit", "indice": "t½ = temps de demi-réaction : la moitié du réactif limitant a été consommée."},
-        {"id": "PC2025-II-5", "enonce_court": "Intermédiaires réactionnels du mécanisme", "points": 1, "reponse_attendue": "tBu⁺ (carbocation) et tBu(OH₂)⁺", "type_reponse": "manuscrit", "indice": "Les intermédiaires réactionnels sont les espèces formées puis consommées au cours du mécanisme."},
-        {"id": "PC2025-II-6", "enonce_court": "Flèches courbes du mécanisme", "points": 2, "reponse_attendue": "Étape 1: hétérolyse C-Br. Étape 2: attaque nucléophile H₂O sur tBu⁺. Étape 3: déprotonation.", "type_reponse": "manuscrit", "indice": "Mécanisme SN1 : 1) départ du groupe partant, 2) attaque du nucléophile, 3) déprotonation."},
-        {"id": "PC2025-II-7", "enonce_court": "Constante de vitesse k", "points": 1, "reponse_attendue": "k = 0.277 h⁻¹", "type_reponse": "choix", "indice": "k = ln(2)/t½. Vérifiez les unités : ordre 1 → k en h⁻¹."},
-        {"id": "PC2025-II-8", "enonce_court": "Loi de vitesse", "points": 2, "reponse_attendue": "v = k × [tBuBr]", "type_reponse": "manuscrit", "indice": "Réaction d'ordre 1 : la vitesse est proportionnelle à la concentration du réactif."}
+        {"id": "PC2025-II-1", "enonce_court": "Donner la formule topologique et le nom du produit tBuOH.", "points": 2, "reponse_attendue": "2-méthylpropan-2-ol", "type_reponse": "choix", "indice": "tBuOH = (CH₃)₃COH. C'est un alcool tertiaire."},
+        {"id": "PC2025-II-2", "enonce_court": "À quelle famille de réaction appartient cette transformation ?", "points": 1, "reponse_attendue": "Substitution", "type_reponse": "choix", "indice": "Br est remplacé par OH : un atome/groupe en remplace un autre."},
+        {"id": "PC2025-II-3", "enonce_court": "Identifier l'allure de la courbe de conductimétrie attendue.", "points": 1, "reponse_attendue": "Courbe 4 (croissance puis plateau)", "type_reponse": "choix", "indice": "Les ions Br⁻ et H₃O⁺ apparaissent progressivement, augmentant σ."},
+        {"id": "PC2025-II-4", "enonce_court": "Dresser le tableau d'avancement de la réaction.", "points": 2, "reponse_attendue": "À t½ : n(tBuBr) = 0.025 mol. À l'infini : n(tBuBr) = 0, n(tBuOH) = 0.050 mol.", "type_reponse": "manuscrit", "indice": "t½ = temps de demi-réaction : la moitié du réactif limitant a été consommée."},
+        {"id": "PC2025-II-5", "enonce_court": "Identifier les intermédiaires réactionnels du mécanisme.", "points": 1, "reponse_attendue": "tBu⁺ (carbocation) et tBu(OH₂)⁺", "type_reponse": "manuscrit", "indice": "Les intermédiaires réactionnels sont les espèces formées puis consommées au cours du mécanisme."},
+        {"id": "PC2025-II-6", "enonce_court": "Représenter les flèches courbes du mécanisme réactionnel.", "points": 2, "reponse_attendue": "Étape 1: hétérolyse C-Br. Étape 2: attaque nucléophile H₂O sur tBu⁺. Étape 3: déprotonation.", "type_reponse": "manuscrit", "indice": "Mécanisme SN1 : 1) départ du groupe partant, 2) attaque du nucléophile, 3) déprotonation."},
+        {"id": "PC2025-II-7", "enonce_court": "Calculer la valeur de la constante de vitesse k.", "points": 1, "reponse_attendue": "k = 0.277 h⁻¹", "type_reponse": "choix", "indice": "k = ln(2)/t½. Vérifiez les unités : ordre 1 → k en h⁻¹."},
+        {"id": "PC2025-II-8", "enonce_court": "Établir la loi de vitesse de la réaction.", "points": 2, "reponse_attendue": "v = k × [tBuBr]", "type_reponse": "manuscrit", "indice": "Réaction d'ordre 1 : la vitesse est proportionnelle à la concentration du réactif."}
       ]
     },
     {
@@ -44,16 +45,16 @@
       "points_total": 14,
       "pages_enonce": [7, 8],
       "sous_questions": [
-        {"id": "PC2025-III-1", "enonce_court": "u₁(t) en fonction de i(t)", "points": 1, "reponse_attendue": "u₁(t) = R₁ × i(t)", "type_reponse": "manuscrit", "indice": "Loi d'Ohm pour une résistance."},
-        {"id": "PC2025-III-2", "enonce_court": "Relation uc(t) et i(t) pour un condensateur", "points": 1, "reponse_attendue": "i(t) = C × duc(t)/dt", "type_reponse": "choix", "indice": "L'unité du farad est A·s·V⁻¹. Donc i = C × du/dt."},
-        {"id": "PC2025-III-3", "enonce_court": "Expressions de a et b dans l'équation différentielle", "points": 2, "reponse_attendue": "a = 1/(R₁C), b = E/(R₁C)", "type_reponse": "manuscrit", "indice": "Loi des mailles : E = R₁i + uc. Remplacez i par C×duc/dt."},
-        {"id": "PC2025-III-4", "enonce_court": "Expression de uc(t) lors de la charge", "points": 1, "reponse_attendue": "uc(t) = E(1 - e^{-t/(R₁C)})", "type_reponse": "choix", "indice": "Condition initiale : uc(0) = 0. Asymptote : uc(∞) = E."},
-        {"id": "PC2025-III-5", "enonce_court": "Constante de temps τ₁", "points": 2, "reponse_attendue": "τ₁ = R₁C = 60 × 5×10⁻⁴ = 30 ms", "type_reponse": "manuscrit", "indice": "τ = RC pour un circuit RC série."},
-        {"id": "PC2025-III-6", "enonce_court": "Temps tfin de charge complète", "points": 1, "reponse_attendue": "tfin = 5τ₁ = 150 ms", "type_reponse": "manuscrit", "indice": "Convention : le condensateur est chargé à plus de 99% après 5τ."},
-        {"id": "PC2025-III-7", "enonce_court": "Courbe correspondant à uc(t)", "points": 1, "reponse_attendue": "Courbe B (croissance exponentielle vers E=10V)", "type_reponse": "choix", "indice": "uc(t) part de 0 et croît vers E avec une tangente initiale non nulle."},
-        {"id": "PC2025-III-8", "enonce_court": "τ₂ lors de la décharge", "points": 2, "reponse_attendue": "τ₂ = 20 ms (lecture graphique)", "type_reponse": "manuscrit", "indice": "τ₂ correspond au temps pour que uc passe de sa valeur initiale à 37% de celle-ci."},
-        {"id": "PC2025-III-9", "enonce_court": "Résistance R₂", "points": 1, "reponse_attendue": "R₂ = τ₂/C = 0.020/5×10⁻⁴ = 40 Ω", "type_reponse": "manuscrit", "indice": "τ₂ = R₂ × C."},
-        {"id": "PC2025-III-10", "enonce_court": "Durée d'illumination Δt", "points": 2, "reponse_attendue": "Δt ≈ 10 ms", "type_reponse": "manuscrit", "indice": "La lampe est allumée tant que u₂ > 6V. Lisez sur le graphique."}
+        {"id": "PC2025-III-1", "enonce_court": "Exprimer $u_1(t)$ en fonction de $i(t)$.", "points": 1, "reponse_attendue": "u₁(t) = R₁ × i(t)", "type_reponse": "manuscrit", "indice": "Loi d'Ohm pour une résistance."},
+        {"id": "PC2025-III-2", "enonce_court": "Donner la relation entre $u_c(t)$ et $i(t)$ pour un condensateur.", "points": 1, "reponse_attendue": "i(t) = C × duc(t)/dt", "type_reponse": "choix", "indice": "L'unité du farad est A·s·V⁻¹. Donc i = C × du/dt."},
+        {"id": "PC2025-III-3", "enonce_court": "Déterminer les expressions de a et b dans l'équation différentielle.", "points": 2, "reponse_attendue": "a = 1/(R₁C), b = E/(R₁C)", "type_reponse": "manuscrit", "indice": "Loi des mailles : E = R₁i + uc. Remplacez i par C×duc/dt."},
+        {"id": "PC2025-III-4", "enonce_court": "Donner l'expression de $u_c(t)$ lors de la charge.", "points": 1, "reponse_attendue": "uc(t) = E(1 - e^{-t/(R₁C)})", "type_reponse": "choix", "indice": "Condition initiale : uc(0) = 0. Asymptote : uc(∞) = E."},
+        {"id": "PC2025-III-5", "enonce_court": "Calculer la valeur de la constante de temps $\\tau_1$.", "points": 2, "reponse_attendue": "τ₁ = R₁C = 60 × 5×10⁻⁴ = 30 ms", "type_reponse": "manuscrit", "indice": "τ = RC pour un circuit RC série."},
+        {"id": "PC2025-III-6", "enonce_court": "Estimer le temps $t_{fin}$ de charge complète.", "points": 1, "reponse_attendue": "tfin = 5τ₁ = 150 ms", "type_reponse": "manuscrit", "indice": "Convention : le condensateur est chargé à plus de 99% après 5τ."},
+        {"id": "PC2025-III-7", "enonce_court": "Identifier la courbe correspondant à $u_c(t)$ sur le graphique.", "points": 1, "reponse_attendue": "Courbe B (croissance exponentielle vers E=10V)", "type_reponse": "choix", "indice": "uc(t) part de 0 et croît vers E avec une tangente initiale non nulle."},
+        {"id": "PC2025-III-8", "enonce_court": "Déterminer graphiquement la valeur de $\\tau_2$ lors de la décharge.", "points": 2, "reponse_attendue": "τ₂ = 20 ms (lecture graphique)", "type_reponse": "manuscrit", "indice": "τ₂ correspond au temps pour que uc passe de sa valeur initiale à 37% de celle-ci."},
+        {"id": "PC2025-III-9", "enonce_court": "En déduire la valeur de la résistance $R_2$.", "points": 1, "reponse_attendue": "R₂ = τ₂/C = 0.020/5×10⁻⁴ = 40 Ω", "type_reponse": "manuscrit", "indice": "τ₂ = R₂ × C."},
+        {"id": "PC2025-III-10", "enonce_court": "Déterminer la durée d'illumination $\\Delta t$ de la lampe.", "points": 2, "reponse_attendue": "Δt ≈ 10 ms", "type_reponse": "manuscrit", "indice": "La lampe est allumée tant que u₂ > 6V. Lisez sur le graphique."}
       ]
     }
   ]
