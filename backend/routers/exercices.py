@@ -49,10 +49,15 @@ async def questions_par_chapitre(matiere: str, chapitre: str):
 
 @router.get("/redige/{matiere}/{chapitre}")
 async def exercices_rediges(matiere: str, chapitre: str):
-    """Retourne les exercices rédigés d'un chapitre avec leurs sous-questions."""
+    """Retourne les exercices rédigés d'un chapitre avec leurs questions."""
     exercises = get_questions_by_chapter(matiere, chapitre)
-    result = [ex for ex in exercises if "sous_questions" in ex]
+    result = [ex for ex in exercises if "sous_questions" in ex or "questions" in ex]
     
+    # Generate timestamp bypass inside the API response
+    import time
+    for ex in result:
+        ex["_ts"] = time.time()
+        
     if not result:
         raise HTTPException(404, f"Aucun exercice rédigé pour {matiere}/{chapitre}")
     return {"matiere": matiere, "chapitre": chapitre, "exercices": result}

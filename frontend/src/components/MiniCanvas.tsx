@@ -1,13 +1,13 @@
 import { useRef, useState, useEffect } from 'react'
-import { fabric } from 'fabric'
+import { Canvas, PencilBrush } from 'fabric'
 
 export default function MiniCanvas({ width, height, id }: { width: number, height: number, id: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const [fabricCanvas, setFabricCanvas] = useState<fabric.Canvas | null>(null)
+  const [fabricCanvas, setFabricCanvas] = useState<Canvas | null>(null)
 
   useEffect(() => {
     if (!canvasRef.current) return
-    const canvas = new fabric.Canvas(canvasRef.current, {
+    const canvas = new Canvas(canvasRef.current, {
       isDrawingMode: true,
       width,
       height,
@@ -15,8 +15,10 @@ export default function MiniCanvas({ width, height, id }: { width: number, heigh
     })
     
     // Default brush settings
-    canvas.freeDrawingBrush.color = '#000000'
-    canvas.freeDrawingBrush.width = 2
+    const brush = new PencilBrush(canvas)
+    brush.color = '#000000'
+    brush.width = 2
+    canvas.freeDrawingBrush = brush
 
     // Set id for extraction
     ;(canvas as any).customId = id

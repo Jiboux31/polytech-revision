@@ -8,28 +8,97 @@
       "id": "MSPE2024-I",
       "titre": "Suites numériques",
       "chapitre": "suites",
-      "contexte": "Soit la suite $(u_n)$ définie par $u_0 = 2$ et, pour tout entier naturel $n$, $u_{n+1} = \\frac{3u_n + 2}{u_n + 4}$.",
       "points_total": 20,
-      "pages_enonce": [4],
-      "pages_doc_reponse": {"pdf": "Docs-reponses-vierges-combines-2024.pdf", "pages": [2]},
-      "sous_questions": [
-        {"id": "MSPE2024-I-1a", "enonce_court": "Calculer u1 et u2", "points": 2, "reponse_attendue": "u1 = 4/3, u2 = 9/8", "cours_associe": "Calcul des premiers termes d'une suite définie par récurrence.", "indice": "Remplacez n par 0 puis 1 dans la formule.", "type_reponse": "manuscrit"},
-        {"id": "MSPE2024-I-1b", "enonce_court": "Conjecturer le comportement de (un)", "points": 2, "reponse_attendue": "La suite (un) est décroissante et converge vers 1.", "cours_associe": "Conjecture graphique ou numérique du sens de variation.", "indice": "Observez les valeurs : 2, 4/3, 9/8.", "type_reponse": "manuscrit"},
-        {"id": "MSPE2024-I-2a", "enonce_court": "Exprimer u_{n+1} - u_n", "points": 3, "reponse_attendue": "u_{n+1} - u_n = (1-u_n)(u_n+2) / (u_n+4)", "cours_associe": "Pour étudier le sens de variation, on calcule la différence de deux termes consécutifs.", "indice": "Mettez au même dénominateur.", "type_reponse": "manuscrit"},
-        {"id": "MSPE2024-I-2b", "enonce_court": "En déduire que (un) est décroissante", "points": 3, "reponse_attendue": "Pour tout n, un >= 1. Donc 1-un <= 0. Comme un+2 > 0 et un+4 > 0, u_{n+1}-un <= 0.", "cours_associe": "Signe d'une expression rationnelle.", "indice": "Utilisez le fait que un >= 1.", "type_reponse": "manuscrit"}
+      "contexte": {
+        "texte": "Soit la suite $(u_n)$ définie par $u_0 = 2$ et, pour tout entier naturel $n$, $u_{n+1} = \\frac{3u_n + 2}{u_n + 4}$.",
+        "schemas": []
+      },
+      "questions": [
+        {
+          "id": "MSPE2024-I-1a",
+          "enonce": "Calculer u1 et u2",
+          "type": "manuscrit",
+          "champs_reponse": [
+            {"label": "$u_1$ =", "id": "u1", "width": "medium"},
+            {"label": "$u_2$ =", "id": "u2", "width": "medium"}
+          ],
+          "points": 2,
+          "reponse_attendue": "u1 = 4/3, u2 = 9/8",
+          "cours_associe": "Calcul des premiers termes d'une suite définie par récurrence.",
+          "indice": "Remplacez n par 0 puis 1 dans la formule."
+        },
+        {
+          "id": "MSPE2024-I-1b",
+          "enonce": "Conjecturer le comportement de (un)",
+          "type": "manuscrit",
+          "champs_reponse": [
+            {"label": "Conjecture :", "id": "conjecture", "width": "large"}
+          ],
+          "points": 2,
+          "reponse_attendue": "La suite (un) est décroissante et converge vers 1.",
+          "cours_associe": "Conjecture graphique ou numérique du sens de variation.",
+          "indice": "Observez les valeurs : 2, 4/3, 9/8."
+        },
+        {
+          "id": "MSPE2024-I-2a",
+          "enonce": "Exprimer u_{n+1} - u_n",
+          "type": "manuscrit",
+          "champs_reponse": [
+            {"label": "$u_{n+1} - u_n$ =", "id": "diff", "width": "large"}
+          ],
+          "points": 3,
+          "reponse_attendue": "u_{n+1} - u_n = (1-u_n)(u_n+2) / (u_n+4)",
+          "cours_associe": "Pour étudier le sens de variation, on calcule la différence de deux termes consécutifs.",
+          "indice": "Mettez au même dénominateur."
+        },
+        {
+          "id": "MSPE2024-I-2b",
+          "enonce": "En déduire que (un) est décroissante",
+          "type": "manuscrit",
+          "champs_reponse": [
+            {"label": "Démonstration :", "id": "demo_decroissante", "width": "large"}
+          ],
+          "points": 3,
+          "reponse_attendue": "Pour tout n, un >= 1. Donc 1-un <= 0. Comme un+2 > 0 et un+4 > 0, u_{n+1}-un <= 0.",
+          "cours_associe": "Signe d'une expression rationnelle.",
+          "indice": "Utilisez le fait que un >= 1."
+        }
       ]
     },
     {
       "id": "MSPE2024-II",
       "titre": "Géométrie dans l'espace",
       "chapitre": "geometrie_espace",
-      "contexte": "Dans l'espace muni d'un repère orthonormé, on considère les points $A(1; 0; 2)$, $B(2; 1; 2)$ et $C(3; 0; 0)$. Soit la droite $\\Delta$ passant par le point $L(1; 2; 3)$ et de vecteur directeur $\\vec{u}(1; -1; 2)$.",
       "points_total": 20,
-      "pages_enonce": [5],
-      "pages_doc_reponse": {"pdf": "Docs-reponses-vierges-combines-2024.pdf", "pages": [2, 3]},
-      "sous_questions": [
-        {"id": "MSPE2024-II-1", "enonce_court": "Montrer que les points A, B et C définissent un plan et déterminer son équation cartésienne.", "points": 10, "reponse_attendue": "Equation : $x - y + z - 3 = 0$.", "cours_associe": "Géométrie analytique dans l'espace.", "indice": "Utilisez le produit scalaire pour trouver un vecteur normal.", "type_reponse": "manuscrit"},
-        {"id": "MSPE2024-II-2", "enonce_court": "Donner une représentation paramétrique de la droite $\\Delta$.", "points": 10, "reponse_attendue": "x = 1+t, y = 2-t, z = 3+2t.", "cours_associe": "Droite définie par un point et un vecteur directeur.", "indice": "M(x,y,z) appartient à D ssi LM = t.u.", "type_reponse": "manuscrit"}
+      "contexte": {
+        "texte": "Dans l'espace muni d'un repère orthonormé, on considère les points $A(1; 0; 2)$, $B(2; 1; 2)$ et $C(3; 0; 0)$. Soit la droite $\\Delta$ passant par le point $L(1; 2; 3)$ et de vecteur directeur $\\vec{u}(1; -1; 2)$.",
+        "schemas": []
+      },
+      "questions": [
+        {
+          "id": "MSPE2024-II-1",
+          "enonce": "Montrer que les points A, B et C définissent un plan et déterminer son équation cartésienne.",
+          "type": "manuscrit",
+          "champs_reponse": [
+            {"label": "Équation :", "id": "eq_plan", "width": "large"}
+          ],
+          "points": 10,
+          "reponse_attendue": "Equation : $x - y + z - 3 = 0$.",
+          "cours_associe": "Géométrie analytique dans l'espace.",
+          "indice": "Utilisez le produit scalaire pour trouver un vecteur normal."
+        },
+        {
+          "id": "MSPE2024-II-2",
+          "enonce": "Donner une représentation paramétrique de la droite $\\Delta$.",
+          "type": "manuscrit",
+          "champs_reponse": [
+            {"label": "Système :", "id": "param", "width": "large"}
+          ],
+          "points": 10,
+          "reponse_attendue": "x = 1+t, y = 2-t, z = 3+2t.",
+          "cours_associe": "Droite définie par un point et un vecteur directeur.",
+          "indice": "M(x,y,z) appartient à D ssi LM = t.u."
+        }
       ]
     }
   ]

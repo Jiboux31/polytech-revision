@@ -109,21 +109,27 @@ export default function ExerciceRedige() {
       {exercise.contexte && (
         <div className="zone-a-contexte" style={{ background: '#f8fafc', padding: 15, borderRadius: 8, marginBottom: 20, border: '1px solid #e2e8f0' }}>
           <h3>Contexte</h3>
-          {exercise.contexte.texte && <p><MathRender latex={exercise.contexte.texte} /></p>}
-          {exercise.contexte.donnees && (
-            <ul>
-              {exercise.contexte.donnees.map((d: string, i: number) => (
-                <li key={i}><MathRender latex={d} /></li>
-              ))}
-            </ul>
+          {typeof exercise.contexte === 'string' ? (
+            <p><MathRender latex={exercise.contexte} /></p>
+          ) : (
+            <>
+              {exercise.contexte.texte && <p><MathRender latex={exercise.contexte.texte} /></p>}
+              {exercise.contexte.donnees && (
+                <ul>
+                  {exercise.contexte.donnees.map((d: string, i: number) => (
+                    <li key={i}><MathRender latex={d} /></li>
+                  ))}
+                </ul>
+              )}
+              {exercise.contexte.schemas && exercise.contexte.schemas.map((s: any, i: number) => {
+                 if (s.source === 'pdf_crop') {
+                   const { pdf, page, crop } = s;
+                   return <img key={i} src={`${API_BASE}/exercices/pdf-crop/${pdf}/${page}?top=${crop.top}&bottom=${crop.bottom}&left=${crop.left}&right=${crop.right}`} style={{ maxWidth: '100%', marginTop: 10, border: '1px solid #cbd5e1' }} alt={s.description} />
+                 }
+                 return null;
+              })}
+            </>
           )}
-          {exercise.contexte.schemas && exercise.contexte.schemas.map((s: any, i: number) => {
-             if (s.source === 'pdf_crop') {
-               const { pdf, page, crop } = s;
-               return <img key={i} src={`${API_BASE}/exercices/pdf-crop/${pdf}/${page}?top=${crop.top}&bottom=${crop.bottom}&left=${crop.left}&right=${crop.right}`} style={{ maxWidth: '100%', marginTop: 10, border: '1px solid #cbd5e1' }} alt={s.description} />
-             }
-             return null;
-          })}
         </div>
       )}
 
