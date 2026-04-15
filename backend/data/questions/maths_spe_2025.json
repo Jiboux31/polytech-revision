@@ -1,8 +1,8 @@
 {
   "annee": 2025,
   "matiere": "maths_specialite",
-  "source_pdf": "EnonceGP2025VF.pdf",
-  "source_corrige": "corrigemaths2025.pdf",
+  "source_pdf": "Enonce-GP-2025-VF.pdf",
+  "source_corrige": "corrige-maths-2025.pdf",
   "exercices": [
     {
       "id": "MSPE2025-I",
@@ -11,6 +11,7 @@
       "contexte": "On considère les fonctions $g$ et $f$ définies sur $]0;+\\infty[$ par : $g(x) = 2x^3 + \\ln(x) - 2$ et $f(x) = \\frac{x^3 + 1 - \\ln(x)}{x}$.",
       "points_total": 14,
       "pages_enonce": [4],
+      "pages_doc_reponse": {"pdf": "docs-reponses-vierges-2025.pdf", "pages": [2]},
       "sous_questions": [
         {"id": "MSPE2025-I-1", "enonce_court": "Dresser le tableau des variations de $g(x) = 2x^3 + \\ln(x) - 2$ sur $]0;+\\infty[$.", "points": 2, "reponse_attendue": "g strictement croissante sur ]0;+∞[, lim 0⁺ = -∞, lim +∞ = +∞", "cours_associe": "Pour dresser un tableau de variations : calculer g'(x), étudier son signe, en déduire les variations.", "indice": "g'(x) = 6x² + 1/x > 0 pour tout x > 0.", "type_reponse": "manuscrit"},
         {"id": "MSPE2025-I-2", "enonce_court": "Justifier que l'équation $g(x)=0$ admet une solution unique $\\alpha$ sur $]0;+\\infty[$.", "points": 2, "reponse_attendue": "g continue, strictement croissante sur ]0;+∞[, lim 0⁺ = -∞ < 0, lim +∞ = +∞ > 0. Par TVI, g(x)=0 a une unique solution.", "cours_associe": "Théorème des valeurs intermédiaires (TVI) : si f continue et strictement monotone sur I, et si f change de signe, alors f(x)=0 a une unique solution.", "indice": "g passe de -∞ à +∞ en étant croissante : appliquez le corollaire du TVI.", "type_reponse": "manuscrit"},
@@ -27,6 +28,7 @@
       "chapitre": "geometrie_espace",
       "points_total": 14,
       "pages_enonce": [4],
+      "pages_doc_reponse": {"pdf": "docs-reponses-vierges-2025.pdf", "pages": [2, 3]},
       "sous_questions": [
         {"id": "MSPE2025-II-1", "enonce_court": "Déterminer les coordonnées des vecteurs $\\vec{AB}$ et $\\vec{AC}$.", "points": 1, "reponse_attendue": "AB(-4;-2;-2), AC(-1;-2;1)", "cours_associe": "Vecteur AB = B - A : chaque coordonnée de B moins la coordonnée correspondante de A.", "indice": "AB = (xB-xA, yB-yA, zB-zA).", "type_reponse": "manuscrit"},
         {"id": "MSPE2025-II-2", "enonce_court": "Calculer la distance $AB$.", "points": 1, "reponse_attendue": "AB = √(16+4+4) = √24 = 2√6", "cours_associe": "Norme d'un vecteur : ||AB|| = √(x²+y²+z²).", "indice": "√24 = √(4×6) = 2√6.", "type_reponse": "manuscrit"},
@@ -48,6 +50,7 @@
       "contexte": "Une urne contient 100 dés. 25 dés sont pipés : pour ces dés, la probabilité d'obtenir 6 est $1/2$. Les 75 autres dés sont équilibrés. On tire un dé au hasard et on le lance $n$ fois. On note $T$ l'événement 'le dé est pipé' et $A_n$ l'événement 'on obtient $n$ fois le chiffre 6'.",
       "points_total": 12,
       "pages_enonce": [5],
+      "pages_doc_reponse": {"pdf": "docs-reponses-vierges-2025.pdf", "pages": [3]},
       "sous_questions": [
         {"id": "MSPE2025-III-1", "enonce_court": "Déterminer les probabilités $P(T)$, $P(\\bar{T})$, $P_T(A_1)$ et $P_{\\bar{T}}(A_1)$.", "points": 2, "reponse_attendue": "P(T)=1/4, P(T̄)=3/4, P_T(A₁)=1/2, P_T̄(A₁)=1/6", "cours_associe": "Probabilité conditionnelle : P_A(B) = P(A∩B)/P(A). Ici T = dé pipé (25 sur 100).", "indice": "25 dés pipés sur 100 : P(T) = 25/100 = 1/4.", "type_reponse": "manuscrit"},
         {"id": "MSPE2025-III-2", "enonce_court": "Calculer la probabilité $P(A_1)$.", "points": 2, "reponse_attendue": "P(A₁) = P(T)P_T(A₁) + P(T̄)P_T̄(A₁) = 1/4 × 1/2 + 3/4 × 1/6 = 1/8 + 1/8 = 1/4", "cours_associe": "Formule des probabilités totales : P(A) = P(T)P_T(A) + P(T̄)P_T̄(A).", "indice": "Utilisez la formule des probabilités totales avec la partition {T, T̄}.", "type_reponse": "manuscrit"},

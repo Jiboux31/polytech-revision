@@ -1,11 +1,13 @@
 import json
 import os
+import time
 from typing import List, Optional
 from config import settings
 
 QUESTIONS_DIR = os.path.join(settings.DATA_DIR, "questions")
 
 def load_all_questions() -> dict:
+# ... (no change in load_all_questions)
     questions = {
         "maths_qcm": [],
         "maths_specialite": [],
@@ -43,21 +45,35 @@ def get_questions_by_chapter(matiere: str, chapitre: str) -> list:
     targets = mapping.get(chapitre, [chapitre])
     
     for annale in all_q.get(matiere, []):
+        metadata = {
+            "annee": annale.get("annee"),
+            "matiere": annale.get("matiere"),
+            "source_pdf": annale.get("source_pdf"),
+            "source_corrige": annale.get("source_corrige")
+        }
         for exercice in annale.get("exercices", []):
             if exercice.get("chapitre") in targets:
-                result.append(exercice)
+                # Merge metadata into exercise
+                ex_with_meta = {**metadata, **exercice}
+                result.append(ex_with_meta)
     return result
 
 def get_exercise_by_id(exercise_id: str) -> Optional[dict]:
     all_q = load_all_questions()
     for matiere_questions in all_q.values():
         for annale in matiere_questions:
+            metadata = {
+                "annee": annale.get("annee"),
+                "matiere": annale.get("matiere"),
+                "source_pdf": annale.get("source_pdf"),
+                "source_corrige": annale.get("source_corrige")
+            }
             for exercice in annale.get("exercices", []):
                 if exercice.get("id") == exercise_id:
-                    return exercice
+                    return {**metadata, **exercice, "_ts": time.time()}
                 for sq in exercice.get("sous_questions", []):
                     if sq.get("id") == exercise_id:
-                        return sq
+                        return {**metadata, **exercice, "_ts": time.time()}
     return None
 
 def get_revision_plan() -> dict:

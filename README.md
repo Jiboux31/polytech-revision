@@ -31,4 +31,5 @@ npm run dev
 
 ## Documentation
 - [Spec Générale](docs/SPEC_GENERALE_V1.md)
+- [Rapport Audit Affichage (15/04/2026)](docs/AUDIT_AFFICHAGE_20260415.md)
 - [Changelog](docs/CHANGELOG.md)

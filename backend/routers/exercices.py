@@ -5,8 +5,19 @@ from services.questions_service import (
     get_exercise_by_id, get_revision_plan
 )
 from services.pdf_service import get_pdf_page_image
+from services.pdf_crop_service import get_pdf_crop
 
 router = APIRouter(prefix="/exercices", tags=["exercices"])
+
+@router.get("/pdf-crop/{pdf_filename}/{page_number}")
+async def get_cropped_page(pdf_filename: str, page_number: int,
+                           top: float = 0, bottom: float = 1,
+                           left: float = 0, right: float = 1):
+    """Retourne un crop d'une page PDF."""
+    image_path = get_pdf_crop(pdf_filename, page_number, top, bottom, left, right)
+    if not image_path:
+        raise HTTPException(404, "Crop introuvable")
+    return FileResponse(image_path, media_type="image/png")
 
 @router.get("/pdf-page/{pdf_filename}/{page_number}")
 async def get_page_image(pdf_filename: str, page_number: int):

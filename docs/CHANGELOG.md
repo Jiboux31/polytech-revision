@@ -2,6 +2,12 @@
 
 ## [Unreleased] - Run 2 en cours
 
+### Hotfix : Affichage des Énoncés PDF (2026-04-15)
+- **Infrastructure** : Mise en place de `pdftoppm` et d'un service de cache d'images pour les pages PDF.
+- **Backend** : Nouvel endpoint `/api/exercices/pdf-page` pour servir les schémas et graphiques originaux.
+- **Frontend** : Refonte de `ExerciceRedige.tsx` pour intégrer dynamiquement les pages de l'énoncé et des documents réponses.
+- **Données** : Audit complet et synchronisation des pages PDF pour l'ensemble des exercices 2024 et 2025 (PC et Maths Spé).
+
 ### Début Run 2 — Frontend QCM (2026-04-13)
 - Intégration React Router pour la navigation entre pages (Home, Plan, QCM, Résultats, Dashboard).
 - Mise en place des variables CSS avec palette "cahier moderne" et typographie Source Sans 3.

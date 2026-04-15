@@ -10,7 +10,8 @@
       "chapitre": "suites",
       "contexte": "Soit la suite $(u_n)$ définie par $u_0 = 2$ et, pour tout entier naturel $n$, $u_{n+1} = \\frac{3u_n + 2}{u_n + 4}$.",
       "points_total": 20,
-      "pages_enonce": [5],
+      "pages_enonce": [4],
+      "pages_doc_reponse": {"pdf": "Docs-reponses-vierges-combines-2024.pdf", "pages": [2]},
       "sous_questions": [
         {"id": "MSPE2024-I-1a", "enonce_court": "Calculer u1 et u2", "points": 2, "reponse_attendue": "u1 = 4/3, u2 = 9/8", "cours_associe": "Calcul des premiers termes d'une suite définie par récurrence.", "indice": "Remplacez n par 0 puis 1 dans la formule.", "type_reponse": "manuscrit"},
         {"id": "MSPE2024-I-1b", "enonce_court": "Conjecturer le comportement de (un)", "points": 2, "reponse_attendue": "La suite (un) est décroissante et converge vers 1.", "cours_associe": "Conjecture graphique ou numérique du sens de variation.", "indice": "Observez les valeurs : 2, 4/3, 9/8.", "type_reponse": "manuscrit"},
@@ -24,7 +25,8 @@
       "chapitre": "geometrie_espace",
       "contexte": "Dans l'espace muni d'un repère orthonormé, on considère les points $A(1; 0; 2)$, $B(2; 1; 2)$ et $C(3; 0; 0)$. Soit la droite $\\Delta$ passant par le point $L(1; 2; 3)$ et de vecteur directeur $\\vec{u}(1; -1; 2)$.",
       "points_total": 20,
-      "pages_enonce": [6],
+      "pages_enonce": [5],
+      "pages_doc_reponse": {"pdf": "Docs-reponses-vierges-combines-2024.pdf", "pages": [2, 3]},
       "sous_questions": [
         {"id": "MSPE2024-II-1", "enonce_court": "Montrer que les points A, B et C définissent un plan et déterminer son équation cartésienne.", "points": 10, "reponse_attendue": "Equation : $x - y + z - 3 = 0$.", "cours_associe": "Géométrie analytique dans l'espace.", "indice": "Utilisez le produit scalaire pour trouver un vecteur normal.", "type_reponse": "manuscrit"},
         {"id": "MSPE2024-II-2", "enonce_court": "Donner une représentation paramétrique de la droite $\\Delta$.", "points": 10, "reponse_attendue": "x = 1+t, y = 2-t, z = 3+2t.", "cours_associe": "Droite définie par un point et un vecteur directeur.", "indice": "M(x,y,z) appartient à D ssi LM = t.u.", "type_reponse": "manuscrit"}
