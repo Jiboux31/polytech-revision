@@ -399,19 +399,20 @@ Pour les questions de type `manuscrit`, le comportement actuel reste : on export
 
 Pour chaque exercice rédigé (PC 2024, PC 2025, Maths Spé 2024, Maths Spé 2025) :
 
-1. **Identifier le texte de contexte** (avant les questions) et le saisir en texte + LaTeX dans le champ `contexte.texte`
-2. **Lister les données numériques** dans `contexte.donnees`
-3. **Identifier les schémas** et définir les coordonnées de crop dans `contexte.schemas`
-4. **Pour chaque question**, déterminer le `type` :
+1. [x] **Identifier le texte de contexte** (avant les questions) et le saisir en texte + LaTeX dans le champ `contexte.texte`
+2. [x] **Lister les données numériques** dans `contexte.donnees`
+3. [x] **Identifier les schémas** et définir les coordonnées de crop dans `contexte.schemas`
+4. [x] **Pour chaque question**, déterminer le `type` :
    - `"qcm_single"` : une seule réponse parmi N (ex: cocher la bonne formule)
    - `"qcm_multi"` : plusieurs réponses possibles (ex: cocher Rectiligne + Accéléré)
    - `"manuscrit"` : réponse écrite à la main
-5. **Pour les QCM** : lister les `options` avec `correct: true/false`
-6. **Pour les manuscrits** : définir les `champs_reponse` qui reproduisent la feuille réponse
+5. [x] **Pour les QCM** : lister les `options` avec `correct: true/false`
+6. [x] **Pour les manuscrits** : définir les `champs_reponse` qui reproduisent la feuille réponse
 
 ### Priorité : commencer par PC 2025 (3 exercices)
 
-Les 3 exercices de PC 2025 sont les plus variés (QCM + manuscrit + schémas + graphiques). Une fois le modèle validé, Léo réplique pour les autres.
+Les 3 exercices de PC 2025 sont les plus variés (QCM + manuscrit + schémas + graphiques). Une fois le modèle validé, Léo réplique pour les autres. [FAIT]
+
 
 ---
 

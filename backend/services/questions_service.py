@@ -37,9 +37,11 @@ def get_questions_by_chapter(matiere: str, chapitre: str) -> list:
     # Mapping pour gérer les chapitres du plan qui n'ont pas d'ID exact dans le JSON
     mapping = {
         "analyse_I": ["analyse_fonctions", "analyse_I"],
-        "analyse_II": ["suites", "analyse_II"], # On dévie sur les suites pour varier le Jour 2
+        "analyse_II": ["suites", "analyse_II"],
         "synthese": ["analyse_fonctions", "suites", "probabilites_avancees", "synthese"],
-        "chimie_generale": ["chimie_organique", "chimie_generale"]
+        "chimie_generale": ["chimie_generale", "acide_base", "oxydo_reduction"],
+        "chimie_organique": ["chimie_organique", "acide_base", "oxydo_reduction"],
+        "cinetique": ["cinetique"]
     }
     
     targets = mapping.get(chapitre, [chapitre])
@@ -71,7 +73,9 @@ def get_exercise_by_id(exercise_id: str) -> Optional[dict]:
             for exercice in annale.get("exercices", []):
                 if exercice.get("id") == exercise_id:
                     return {**metadata, **exercice, "_ts": time.time()}
-                for sq in exercice.get("sous_questions", []):
+                # Chercher dans questions OU sous_questions
+                questions = exercice.get("questions", exercice.get("sous_questions", []))
+                for sq in questions:
                     if sq.get("id") == exercise_id:
                         return {**metadata, **exercice, "_ts": time.time()}
     return None
@@ -109,20 +113,20 @@ def get_revision_plan() -> dict:
             },
             {
                 "jour": 4,
-                "theme": "Probabilités & Chimie organique",
+                "theme": "Probabilités & Cinétique",
                 "blocs": [
                     {"matiere": "maths_qcm", "chapitre": "probabilites", "label": "Probabilités"},
                     {"matiere": "maths_specialite", "chapitre": "probabilites_avancees", "label": "Probabilités avancées"},
-                    {"matiere": "physique_chimie", "chapitre": "chimie_organique", "label": "Chimie organique & cinétique"}
+                    {"matiere": "physique_chimie", "chapitre": "cinetique", "label": "Cinétique chimique"}
                 ]
             },
             {
                 "jour": 5,
-                "theme": "Géométrie & Chimie générale + Révision",
+                "theme": "Géométrie & Chimie + Révision",
                 "blocs": [
                     {"matiere": "maths_qcm", "chapitre": "geometrie_plan", "label": "Géométrie dans le plan"},
                     {"matiere": "maths_specialite", "chapitre": "synthese", "label": "Synthèse (intégration, compléments)"},
-                    {"matiere": "physique_chimie", "chapitre": "chimie_generale", "label": "Acide-base, oxydo-réduction"}
+                    {"matiere": "physique_chimie", "chapitre": "chimie_organique", "label": "Acide-base & Chimie organique"}
                 ]
             }
         ]

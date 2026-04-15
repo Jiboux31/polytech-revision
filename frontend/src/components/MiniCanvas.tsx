@@ -25,8 +25,13 @@ export default function MiniCanvas({ width, height, id }: { width: number, heigh
 
     setFabricCanvas(canvas)
 
+    // Store in window for global collection
+    if (!(window as any).activeCanvases) (window as any).activeCanvases = {}
+    ;(window as any).activeCanvases[id] = canvas
+
     // On unmount
     return () => {
+      delete (window as any).activeCanvases[id]
       canvas.dispose()
     }
   }, [width, height, id])

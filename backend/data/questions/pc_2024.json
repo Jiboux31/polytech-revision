@@ -11,7 +11,22 @@
       "points_total": 11,
       "contexte": {
         "texte": "La microfiltration des eaux usées représente un enjeu écologique majeur. Le liquide s’écoule dans des membranes microporeuses. Pour simplifier, on considère qu’une membrane est une plaque percée de trous circulaires de diamètre a et espacés d'une distance b. On se propose de déterminer expérimentalement a et b par un dispositif optique.\nPartie 1 : Un laser monochromatique de longueur d’onde $\\lambda = 500$ nm est utilisé.",
-        "schemas": []
+        "schemas": [
+          {
+            "source": "pdf_crop",
+            "pdf": "Sujet-complet-2024.pdf",
+            "page": 6,
+            "crop": {"top": 0.30, "bottom": 0.50, "left": 0.0, "right": 1.0},
+            "description": "Figure 1 : Dispositif de diffraction"
+          },
+          {
+            "source": "pdf_crop",
+            "pdf": "Sujet-complet-2024.pdf",
+            "page": 6,
+            "crop": {"top": 0.65, "bottom": 0.85, "left": 0.0, "right": 1.0},
+            "description": "Figure 2 : Dispositif d'interférences"
+          }
+        ]
       },
       "questions": [
         {
@@ -49,7 +64,15 @@
       "points_total": 13,
       "contexte": {
         "texte": "Le lactate d’éthyle est un composé de formule semi-développée H$_3$C-CH(OH)-COOCH$_2$CH$_3$. Masses molaires : Lactate d'éthyle 118,0 g/mol ; Acide lactique 90,0 g/mol ; Éthanol 46,0 g/mol.",
-        "schemas": []
+        "schemas": [
+          {
+            "source": "pdf_crop",
+            "pdf": "Sujet-complet-2024.pdf",
+            "page": 7,
+            "crop": {"top": 0.44, "bottom": 0.72, "left": 0.0, "right": 1.0},
+            "description": "Graphique : Évolution de la quantité d'acide lactique n(t)"
+          }
+        ]
       },
       "questions": [
         {
@@ -89,7 +112,7 @@
             "source": "pdf_crop",
             "pdf": "Sujet-complet-2024.pdf",
             "page": 8,
-            "crop": {"top": 0.05, "bottom": 0.35, "left": 0.0, "right": 1.0},
+            "crop": {"top": 0.10, "bottom": 0.37, "left": 0.0, "right": 1.0},
             "description": "Schéma saut à ski (tremplin et vol)"
           }
         ]

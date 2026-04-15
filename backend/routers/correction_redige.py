@@ -75,14 +75,36 @@ async def corriger_exercice(submission: ExerciceSubmission):
             "physique_chimie": "Physique-Chimie"
         }.get(exercise.get("matiere", ""), exercise.get("matiere", ""))
 
-        # We assume the user drew on the first field id for simple cases
-        # Extract base64 image if available (images dict format: {"id": "base64..."})
+        # Merge multiple canvases if present
         image_base64 = ""
         if submission.images:
-            for v in submission.images.values():
+            from PIL import Image
+            import io
+            
+            valid_images = []
+            for k, v in submission.images.items():
                 if v and "base64," in v:
-                    image_base64 = v.split("base64,")[1]
-                    break
+                    try:
+                        img_data = base64.b64decode(v.split("base64,")[1])
+                        valid_images.append(Image.open(io.BytesIO(img_data)))
+                    except Exception:
+                        continue
+            
+            if valid_images:
+                # Stitch vertically
+                widths, heights = zip(*(i.size for i in valid_images))
+                max_width = max(widths)
+                total_height = sum(heights) + (len(valid_images) - 1) * 10 # 10px spacing
+                
+                combined = Image.new('RGB', (max_width, total_height), (255, 255, 255))
+                y_offset = 0
+                for img in valid_images:
+                    combined.paste(img, (0, y_offset))
+                    y_offset += img.size[1] + 10
+                
+                buffered = io.BytesIO()
+                combined.save(buffered, format="PNG")
+                image_base64 = base64.b64encode(buffered.getvalue()).decode()
 
         if image_base64:
             try:

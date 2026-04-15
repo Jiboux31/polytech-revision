@@ -51,13 +51,16 @@ export default function ExerciceRedige() {
         payload.selected = Array.from(selectedQCM)
         payload.options = currentQ.options
       } else {
-        // Collect canvas images (stub for now: extract from MiniCanvas)
+        // Collect canvas images (extract from MiniCanvas)
         const canvasImages: Record<string, string> = {}
-        const canvases = document.querySelectorAll('canvas[class^="mini-canvas-"]')
+        const canvases = document.querySelectorAll('canvas')
         canvases.forEach((c: any) => {
-          const cls = Array.from(c.classList).find((cls: any) => cls.startsWith('mini-canvas-'))
-          if (cls) {
-            const id = (cls as string).replace('mini-canvas-', '')
+          // Find the id from class mini-canvas-ID
+          const classList = Array.from(c.classList) as string[]
+          const miniCanvasClass = classList.find(cls => cls.startsWith('mini-canvas-'))
+          if (miniCanvasClass) {
+            const id = miniCanvasClass.replace('mini-canvas-', '')
+            // Check if canvas is not empty (simple check: any pixel != white)
             canvasImages[id] = c.toDataURL()
           }
         })

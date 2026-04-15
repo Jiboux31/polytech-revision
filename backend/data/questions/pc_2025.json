@@ -23,7 +23,7 @@
             "source": "pdf_crop",
             "pdf": "Enonce-GP-2025-VF.pdf",
             "page": 6,
-            "crop": {"top": 0.05, "bottom": 0.45, "left": 0.0, "right": 1.0},
+            "crop": {"top": 0.05, "bottom": 0.70, "left": 0.0, "right": 1.0},
             "description": "Schéma de la catapulte + graphique v(t) + repère de Frenet"
           }
         ]
@@ -143,7 +143,7 @@
     {
       "id": "PC2025-II",
       "titre": "Hydrolyse du bromure de tertiobutyle",
-      "chapitre": "chimie_organique",
+      "chapitre": "cinetique",
       "points_total": 14,
       "contexte": {
         "texte": "On étudie l'hydrolyse du bromure de tertiobutyle (2-bromo-2-méthylpropane, noté tBuBr) en alcool tertiobutylique (noté tBuOH).",
