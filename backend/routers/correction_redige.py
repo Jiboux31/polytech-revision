@@ -58,23 +58,71 @@ async def corriger_exercice(submission: ExerciceSubmission):
         is_correct = (selected_set == correct_indices)
         est_correct = 2 if is_correct else 0
         
+        correct_labels = [opt.get("label") for i, opt in enumerate(sub_q.get("options", [])) if i in correct_indices]
+        
         result = {
             "est_correct": est_correct,
             "points_obtenus": points_max if is_correct else 0,
             "points_max": points_max,
             "feedback": "Bonne réponse !" if is_correct else "Mauvaise réponse.",
             "explication": sub_q.get("explication", ""),
-            "reponse_attendue": "Options correctes : " + ", ".join([str(i) for i in correct_indices])
+            "reponse_attendue": "Options correctes : " + ", ".join(correct_labels)
         }
     else:
-        # Correction manuscrite - mock simple pour l'instant
-        result = {
-            "est_correct": 2, # On suppose ok en dev
-            "points_obtenus": points_max,
-            "points_max": points_max,
-            "feedback": sub_q.get("explication", "Réponse enregistrée (mock)"),
-            "reponse_attendue": sub_q.get("reponse_attendue", "")
-        }
+        # Correction manuscrite - appel à Gemini (réintégrée)
+        matiere_label = {
+            "maths_specialite": "Mathématiques Spécialité",
+            "physique_chimie": "Physique-Chimie"
+        }.get(exercise.get("matiere", ""), exercise.get("matiere", ""))
+
+        # We assume the user drew on the first field id for simple cases
+        # Extract base64 image if available (images dict format: {"id": "base64..."})
+        image_base64 = ""
+        if submission.images:
+            for v in submission.images.values():
+                if v and "base64," in v:
+                    image_base64 = v.split("base64,")[1]
+                    break
+
+        if image_base64:
+            try:
+                # Appeler Gemini Vision
+                llm_res = await correct_handwritten_answer(
+                    image_base64=image_base64,
+                    enonce_court=sub_q.get("enonce", sub_q.get("enonce_court", "")),
+                    reponse_attendue=sub_q.get("reponse_attendue", ""),
+                    cours_associe=sub_q.get("cours_associe", ""),
+                    matiere=matiere_label
+                )
+                
+                est_correct = llm_res.get("est_correct", 0)
+                points_obtenus = points_max if est_correct == 2 else (points_max/2 if est_correct == 1 else 0)
+                
+                result = {
+                    "est_correct": est_correct,
+                    "points_obtenus": points_obtenus,
+                    "points_max": points_max,
+                    "feedback": llm_res.get("feedback", ""),
+                    "explication": llm_res.get("erreurs", ""),
+                    "reponse_attendue": sub_q.get("reponse_attendue", "")
+                }
+            except Exception as e:
+                result = {
+                    "est_correct": 0,
+                    "points_obtenus": 0,
+                    "points_max": points_max,
+                    "feedback": f"Erreur de correction LLM : {str(e)}",
+                    "explication": "",
+                    "reponse_attendue": sub_q.get("reponse_attendue", "")
+                }
+        else:
+            result = {
+                "est_correct": 0,
+                "points_obtenus": 0,
+                "points_max": points_max,
+                "feedback": "Aucun tracé détecté sur la zone de réponse.",
+                "reponse_attendue": sub_q.get("reponse_attendue", "")
+            }
         
     return result
 
