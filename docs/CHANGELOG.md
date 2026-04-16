@@ -1,5 +1,17 @@
 # Changelog
 
+## [Run 3.1] - 2026-04-16
+### Ajouté
+- **Protocole de test E2E** : Script Playwright standalone (`polytech_e2e.py`) avec 29 scénarios.
+- **Fixtures manuscrites** : Génération d'images PNG pour tester le pipeline OCR+LLM.
+- **Rapports de test** : Génération automatique de comptes-rendus Markdown et captures d'écran.
+- **data-testid** : Marquage des composants React pour la testabilité.
+- **Exposition Canvas** : Fonctions `window.__injectTestImage`, `__getCanvasExport`, `__clearCanvas` pour l'injection automatisée.
+
+### Corrigé
+- **MathRender** : Correction des problèmes d'import KaTeX contrib en utilisant des imports dynamiques et suppression des erreurs de types TypeScript.
+- **Navigation Plan** : Ajout des tags `data-testid` manquants sur les matières dans le plan de révision.
+
 ## [Unreleased] - Run 2 en cours
 
 ### Hotfix : Affichage des Énoncés PDF (2026-04-15)
