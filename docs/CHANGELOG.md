@@ -11,6 +11,8 @@
 
 ### Corrigé
 - **LLM Service** : Ajout de `call_gemini_text` pour les prompts textuels purs.
+- **Robustesse JSON** : Correction des erreurs "Invalid \escape" en LaTeX par l'abandon du mode JSON natif de l'API Gemini et l'ajout d'une sanitization manuelle des backslashes.
+- **Troncature Flux** : Passage de `maxOutputTokens` à 8192 pour supporter la génération d'exercices longs.
 
 ## [Run 3.1] - 2026-04-16
 ### Ajouté
