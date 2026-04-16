@@ -153,23 +153,35 @@ export default function ExerciceRedige() {
 
         {!result && (
           <div style={{ display: 'flex', gap: 10 }}>
-            <button onClick={handleHint} disabled={hintUsed}>💡 Indice</button>
-            <button onClick={handleSubmit} disabled={loading} style={{ background: 'var(--accent-blue)', color: 'white' }}>
-              {loading ? 'Validation...' : '✅ Valider'}
+            <button data-testid="hint-button" onClick={handleHint} disabled={hintUsed}>💡 Indice</button>
+            <button data-testid="submit-answer" onClick={handleSubmit} disabled={loading} style={{ background: 'var(--accent-blue)', color: 'white' }}>
+              {loading ? <span data-testid="feedback-loading">Validation...</span> : '✅ Valider'}
             </button>
           </div>
         )}
         
         {showHint && !result && (
-          <div style={{ marginTop: 10, padding: 10, background: '#fffbeb', border: '1px solid #fef3c7' }}>
+          <div data-testid="hint-content" style={{ marginTop: 10, padding: 10, background: '#fffbeb', border: '1px solid #fef3c7' }}>
             <strong>Indice :</strong> <MathRender latex={currentQ.indice || ""} />
           </div>
         )}
 
         {result && (
-          <div className="feedback" style={{ marginTop: 20, padding: 15, background: result.est_correct ? '#ecfdf5' : '#fef2f2', border: '1px solid #ccc' }}>
+          <div data-testid="feedback-block" className="feedback" style={{ marginTop: 20, padding: 15, background: result.est_correct ? '#ecfdf5' : '#fef2f2', border: '1px solid #ccc' }}>
+            {result.est_correct ? (
+              <span data-testid="feedback-correct" style={{display: 'none'}}>Correct</span>
+            ) : (
+              <span data-testid="feedback-incorrect" style={{display: 'none'}}>Incorrect</span>
+            )}
             <p><strong>Feedback :</strong> <MathRender latex={result.feedback || result.explication || ""} /></p>
-            <p><strong>Réponse attendue :</strong> <MathRender latex={result.reponse_attendue || "Voir cours"} /></p>
+            <div data-testid="feedback-correction">
+              <p><strong>Réponse attendue :</strong> <MathRender latex={result.reponse_attendue || "Voir cours"} /></p>
+            </div>
+            {result.cours_rappel && (
+              <div data-testid="feedback-cours">
+                <p><strong>Rappel de cours :</strong> <MathRender latex={result.cours_rappel} /></p>
+              </div>
+            )}
             <button onClick={handleNext} style={{ marginTop: 10, padding: '10px 20px', background: 'var(--accent-blue)', color: 'white' }}>
               {currentQIndex < questions.length - 1 ? 'Question suivante' : 'Terminer'}
             </button>

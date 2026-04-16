@@ -61,7 +61,7 @@ export default function RevisionPlan() {
   if (loading) return <div className="container">Chargement...</div>
 
   return (
-    <div className="container">
+    <div className="container" data-testid="revision-plan">
       <Header title="Plan de révision (5 jours)" />
       
       {plan?.jours?.map((jour: any) => (
@@ -75,8 +75,11 @@ export default function RevisionPlan() {
               const isAvailable = true // Tous les modules sont dispo au run 3
               
               return (
-                <div key={idx} style={{
-                  background: 'var(--bg-card)',
+                <div 
+                  key={idx} 
+                  data-testid={`matiere-${bloc.matiere}`}
+                  style={{
+                    background: 'var(--bg-card)',
                   padding: '20px',
                   borderRadius: 'var(--radius)',
                   boxShadow: 'var(--shadow)',

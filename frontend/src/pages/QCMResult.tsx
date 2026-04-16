@@ -33,7 +33,7 @@ export default function QCMResult() {
         marginBottom: '32px',
         textAlign: 'center'
       }}>
-        <div style={{ fontSize: '3rem', fontWeight: 700, color: 'var(--bg-header)' }}>
+        <div data-testid="qcm-score" style={{ fontSize: '3rem', fontWeight: 700, color: 'var(--bg-header)' }}>
           {resultData.score_final} / {exerciseData.questions.length}
         </div>
         <div style={{ fontSize: '1.2rem', color: 'var(--text-primary)', marginTop: '8px' }}>

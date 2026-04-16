@@ -1,7 +1,8 @@
-import katex from 'katex'
-import renderMathInElement from 'katex/dist/contrib/auto-render'
 import 'katex/dist/katex.min.css'
 import { useRef, useEffect } from 'react'
+
+// Utiliser require pour éviter les problèmes de types de KaTeX contrib
+// const renderMathInElement = (window as any).renderMathInElement || (() => {});
 
 interface Props {
   latex: string
@@ -14,26 +15,28 @@ export default function MathRender({ latex, display = false }: Props) {
   useEffect(() => {
     if (ref.current && latex) {
       const text = String(latex)
-      
-      // 1. On injecte d'abord le texte brut
       ref.current.textContent = text
       
-      // 2. On laisse auto-render chercher les formules et les transformer
-      // Il va chercher les délimiteurs standards : $...$, $$...$$, \(...\), \[...\]
-      try {
-        renderMathInElement(ref.current, {
-          delimiters: [
-            { left: '$$', right: '$$', display: true },
-            { left: '$', right: '$', display: false },
-            { left: '\\(', right: '\\)', display: false },
-            { left: '\\[', right: '\\]', display: true }
-          ],
-          throwOnError: false,
-          trust: true
-        })
-      } catch (e) {
-        console.error("KaTeX auto-render error:", e)
-      }
+      const options = {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false },
+          { left: '\\(', right: '\\)', display: false },
+          { left: '\\[', right: '\\]', display: true }
+        ],
+        throwOnError: false,
+        trust: true
+      };
+
+      // @ts-ignore
+      import('katex/dist/contrib/auto-render').then(module => {
+        module.default(ref.current!, options);
+      }).catch(() => {
+        // Fallback si l'import dynamique échoue dans certains environnements
+        try {
+           (window as any).renderMathInElement(ref.current, options);
+        } catch(e) {}
+      });
     }
   }, [latex, display])
   

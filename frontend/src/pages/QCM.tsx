@@ -71,6 +71,8 @@ export default function QCM() {
         showBack={true}
       />
       
+      <div data-testid="timer" style={{ display: 'none' }}>00:00</div>
+      
       {exercise?.enonce_commun && (
         <div style={{
           background: '#F0F4FF',
@@ -88,8 +90,8 @@ export default function QCM() {
       )}
 
       
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', marginBottom: '40px' }}>
-        {exercise?.questions?.map((q: any) => (
+      <div data-testid="qcm-exercise-list" style={{ display: 'flex', flexDirection: 'column', gap: '32px', marginBottom: '40px' }}>
+        {exercise?.questions?.map((q: any, i: number) => (
           <div key={q.id} style={{
             background: 'var(--bg-card)',
             padding: '24px',
@@ -105,7 +107,7 @@ export default function QCM() {
                 <MathRender latex={q.enonce} display={true} />
               </div>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div data-testid={`qcm-option-${i}`} style={{ display: 'flex', justifyContent: 'center' }}>
                <VFButton 
                 value={reponses[q.id]} 
                 onChange={(val) => handleReponse(q.id, val)} 
@@ -148,6 +150,7 @@ export default function QCM() {
         </button>
         
         <button
+          data-testid="submit-qcm"
           onClick={handleValidate}
           disabled={submitting}
           style={{

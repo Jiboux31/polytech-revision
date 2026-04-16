@@ -447,7 +447,19 @@ polytech-revision/
 └── tests/
     ├── test_correction.py
     ├── test_scoring.py
-    └── test_ocr.py
+    ├── test_ocr.py
+    └── e2e/
+        ├── polytech_e2e.py
+        ├── scenarios.py
+        ├── fixtures/
+        │   ├── fixture_correct.png
+        │   ├── fixture_partielle.png
+        │   ├── fixture_fausse.png
+        │   ├── fixture_vide.png
+        │   └── generate_fixtures.py
+        ├── reports/
+        ├── screenshots/
+        └── README.md
 ```
 
 ---
@@ -460,6 +472,7 @@ polytech-revision/
 | **Run 1** | Backend core : API exercices, banque questions annales 2024+2025 extraites, correction QCM, modèle SQLite | API testable via curl/Postman |
 | **Run 2** | Frontend QCM : interface QCM V/F, chronomètre, feedback, scoring | QCM jouable sur tablette |
 | **Run 3** | Canvas + OCR : zone d'écriture, intégration Gemini vision, correction manuscrit | Exercice rédigé jouable |
+| **Run 3.1** | **Test E2E : protocole Playwright Firefox headless, 29 scénarios par domaine, fixtures manuscrites, CR structuré pour correction, filtrage --tag/--sc/--rerun-fails** | **Script E2E opérationnel, premier CR baseline généré** |
 | **Run 4** | Progression + Dashboard : suivi, plan de révision 5J, notes simulées, analyse | Tableau de bord fonctionnel |
 | **Run 5** | Génération IA + Polish : exercices générés, fiches de cours, mode simulation 3h, peaufinage UX | MVP complet pour Garance |
 
@@ -500,3 +513,42 @@ polytech-revision/
 - [ ] L'app est fluide sur iPad/tablette Android en mode paysage
 - [ ] Toutes les annales 2024+2025 sont intégrées
 - [ ] Au moins 20 exercices générés par IA sont disponibles par matière
+
+---
+
+## 14. Tests E2E — Protocole
+
+### Outil
+Script Playwright (Firefox headless) dans `tests/e2e/polytech_e2e.py`.
+Pas de framework de test — script standalone Python + CR Markdown.
+
+### Invocations principales
+- `python3 tests/e2e/polytech_e2e.py --all` — test complet (29 scénarios, ~3 min)
+- `python3 tests/e2e/polytech_e2e.py --tag {domaine}` — test ciblé (accueil, qcm, manuscrit, correction-llm, dashboard, simulation, responsive)
+- `python3 tests/e2e/polytech_e2e.py --sc SC-XX` — scénario unique
+- `python3 tests/e2e/polytech_e2e.py --rerun-fails` — relance uniquement les échecs du dernier CR
+
+### Domaines couverts
+| Domaine | Scénarios | Couvre |
+|---------|-----------|-------|
+| accueil | SC-01 à SC-03 | Chargement, bienvenue, suggestion |
+| qcm | SC-10 à SC-14 | Navigation, V/F, chrono, scoring, barème |
+| manuscrit | SC-20 à SC-23 | Canvas, injection PNG, undo/redo, export |
+| correction-llm | SC-30 à SC-35 | Correction correcte/partielle/fausse, vide, timeout, indice |
+| dashboard | SC-40 à SC-43 | Matières, chapitres, couleurs, plan révision |
+| simulation | SC-50 à SC-53 | Chrono 3h, enchaînement, pas d'indice, score final |
+| responsive | SC-60 à SC-62 | iPad paysage/portrait, mobile |
+
+### Cycle de correction basé sur le CR
+1. Lire le CR (section "Actions prioritaires")
+2. Pour chaque FAIL : diagnostic → correction → test unitaire → documentation
+3. `--rerun-fails` pour vérifier les corrections
+4. `--all` pour la non-régression
+5. Commit avec le CR propre
+
+### Fixtures manuscrites
+4 images PNG dans `tests/e2e/fixtures/` — réponses correcte, partielle, fausse, et vide.
+Utilisées par les scénarios SC-30 à SC-33 pour tester le pipeline OCR + correction LLM.
+
+### Spec détaillée
+Voir `SPEC_RUN3.1_TEST_E2E_V1.md`

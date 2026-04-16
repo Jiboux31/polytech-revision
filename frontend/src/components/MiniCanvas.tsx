@@ -1,9 +1,8 @@
-import { useRef, useState, useEffect } from 'react'
-import { Canvas, PencilBrush } from 'fabric'
+import { useRef, useEffect } from 'react'
+import { Canvas, PencilBrush, Image as FabricImage } from 'fabric'
 
 export default function MiniCanvas({ width, height, id }: { width: number, height: number, id: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const [fabricCanvas, setFabricCanvas] = useState<Canvas | null>(null)
 
   useEffect(() => {
     if (!canvasRef.current) return
@@ -23,7 +22,30 @@ export default function MiniCanvas({ width, height, id }: { width: number, heigh
     // Set id for extraction
     ;(canvas as any).customId = id
 
-    setFabricCanvas(canvas)
+    // Injection helper for E2E
+    ;(window as any).__injectTestImage = (base64: string) => {
+      return new Promise((resolve, reject) => {
+        const dataUrl = base64.startsWith('data:') ? base64 : `data:image/png;base64,${base64}`;
+        FabricImage.fromURL(dataUrl, { crossOrigin: 'anonymous' })
+          .then((img) => {
+            img.scaleToWidth(canvas.width * 0.9);
+            canvas.add(img);
+            canvas.renderAll();
+            resolve(true);
+          })
+          .catch(reject);
+      });
+    }
+
+    ;(window as any).__getCanvasExport = () => {
+      return canvas.toDataURL({ multiplier: 1, format: 'png' }).split(',')[1];
+    }
+
+    ;(window as any).__clearCanvas = () => {
+      canvas.clear();
+      canvas.set('backgroundColor', '#ffffff');
+      canvas.renderAll();
+    }
 
     // Store in window for global collection
     if (!(window as any).activeCanvases) (window as any).activeCanvases = {}
@@ -37,7 +59,7 @@ export default function MiniCanvas({ width, height, id }: { width: number, heigh
   }, [width, height, id])
 
   return (
-    <div style={{ border: '1px solid #D1D5DB', borderRadius: '4px', overflow: 'hidden' }}>
+    <div data-testid="canvas-container" style={{ border: '1px solid #D1D5DB', borderRadius: '4px', overflow: 'hidden' }}>
       <canvas ref={canvasRef} className={`mini-canvas-${id}`} />
     </div>
   )

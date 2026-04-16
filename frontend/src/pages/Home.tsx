@@ -35,11 +35,14 @@ export default function Home() {
   }
 
   return (
-    <div className="container">
+    <div className="container" data-testid="home-page">
       <Header title="PolytechRevision" showBack={false} />
       
       <div style={{ textAlign: 'center', marginTop: '40px' }}>
-        <h1 style={{ fontSize: '2.5rem', marginBottom: '10px', color: 'var(--text-primary)' }}>
+        <h1 
+          data-testid="welcome-message"
+          style={{ fontSize: '2.5rem', marginBottom: '10px', color: 'var(--text-primary)' }}
+        >
           Bonjour Garance ! 👋
         </h1>
         <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '40px' }}>
@@ -59,13 +62,13 @@ export default function Home() {
             <span style={{ fontSize: '1.5rem' }}>📅</span>
             <span style={{ fontSize: '1.2rem', fontWeight: 600 }}>Concours dans {diffDays} jours</span>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <div data-testid="global-progress" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <span style={{ fontSize: '1.5rem' }}>📊</span>
             <span style={{ fontSize: '1.2rem', fontWeight: 600 }}>Taux de réussite : {progressPercent}%</span>
           </div>
         </div>
         
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
+        <div data-testid="daily-suggestion" style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
           <button
             onClick={handleStartSession}
             style={{
