@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_URL = "http://localhost:5173"
 REPORTS_DIR = os.path.join(BASE_DIR, "reports")
 SCREENSHOTS_DIR = os.path.join(BASE_DIR, "screenshots")
-FIXTURES_DIR = os.path.join(BASE_DIR, "fixtures")
+FIXTURES_DIR = "/root/.openclaw/workspace-coder/tests/e2e/fixtures-e2e"
 
 class ScenarioResult:
     def __init__(self, sc_id, name, status="SKIP", duration=0, message="", screenshot=None):

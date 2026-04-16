@@ -41,10 +41,13 @@ export default function MiniCanvas({ width, height, id }: { width: number, heigh
       return canvas.toDataURL({ multiplier: 1, format: 'png' }).split(',')[1];
     }
 
-    ;(window as any).__clearCanvas = () => {
-      canvas.clear();
-      canvas.set('backgroundColor', '#ffffff');
-      canvas.renderAll();
+    ;(window as any).clearCanvas = (canvasId: string) => {
+      const c = (window as any).activeCanvases[canvasId];
+      if (c) {
+        c.clear();
+        c.set('backgroundColor', '#ffffff');
+        c.renderAll();
+      }
     }
 
     // Store in window for global collection

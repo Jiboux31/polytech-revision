@@ -8,6 +8,7 @@ export default function RevisionPlan() {
   const [plan, setPlan] = useState<any>(null)
   const [progression, setProgression] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
+  const [isGenerating, setIsGenerating] = useState(false)
   
   useEffect(() => {
     console.log("RevisionPlan mounting, fetching data...");
@@ -118,6 +119,8 @@ export default function RevisionPlan() {
 
                   <button
                     onClick={async () => {
+                      if (isGenerating) return;
+                      setIsGenerating(true);
                       try {
                         const res = await fetch('/api/generation/qcm', {
                           method: 'POST',
@@ -132,21 +135,24 @@ export default function RevisionPlan() {
                         }
                       } catch (e) {
                         alert("Erreur réseau lors de la génération.");
+                      } finally {
+                        setIsGenerating(false);
                       }
                     }}
+                    disabled={isGenerating}
                     style={{
                       background: 'white',
-                      color: 'var(--accent-blue)',
-                      border: '1px dashed var(--accent-blue)',
+                      color: isGenerating ? '#9CA3AF' : 'var(--accent-blue)',
+                      border: isGenerating ? '1px solid #E5E7EB' : '1px dashed var(--accent-blue)',
                       padding: '8px',
                       borderRadius: '8px',
                       fontWeight: 600,
-                      cursor: 'pointer',
+                      cursor: isGenerating ? 'wait' : 'pointer',
                       width: '100%',
                       fontSize: '0.85rem'
                     }}
                   >
-                    🎲 Exercice surprise
+                    {isGenerating ? '⏳ Génération en cours...' : '🎲 Exercice surprise'}
                   </button>
                 </div>
               )

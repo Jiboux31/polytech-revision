@@ -64,7 +64,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div style={{ maxWidth: 1100, margin: '0 auto', padding: '20px' }}>
+    <div data-testid="dashboard-page" style={{ maxWidth: 1100, margin: '0 auto', padding: '20px' }}>
       {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
         <h1 style={{ margin: 0, color: 'var(--text-primary)' }}>Tableau de bord</h1>
@@ -133,7 +133,7 @@ export default function Dashboard() {
           {chapitres.map((ch: any) => (
             <div key={ch.chapitre} style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 10 }}>
               <span style={{ flex: '0 0 180px', fontSize: '0.9rem' }}>{ch.chapitre.replace(/_/g, ' ')}</span>
-              <div style={{ flex: 1, height: 12, background: '#E5E7EB', borderRadius: 6, overflow: 'hidden' }}>
+              <div data-testid="chapter-level" style={{ flex: 1, height: 12, background: '#E5E7EB', borderRadius: 6, overflow: 'hidden' }}>
                 <div style={{
                   width: `${Math.round(ch.score_moyen * 100)}%`,
                   height: '100%', background: niveauColor[ch.niveau] || '#ccc',

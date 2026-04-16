@@ -8,7 +8,7 @@ export default function Simulation() {
   const [phase, setPhase] = useState<Phase>('intro')
   const [globalTimer, setGlobalTimer] = useState(10800) // 3h en secondes
   const [running, setRunning] = useState(false)
-  const [scores, setScores] = useState({ qcm: 0, maths_spe: 0, pc: 0 })
+  const [scores] = useState({ qcm: 0, maths_spe: 0, pc: 0 })
   const timerRef = useRef<any>(null)
   const navigate = useNavigate()
 

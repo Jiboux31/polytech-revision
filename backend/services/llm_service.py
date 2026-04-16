@@ -31,29 +31,20 @@ async def call_gemini_vision(image_base64: str, prompt: str, model: str = None) 
         }
     }
     
-    # Timeout augmenté à 60s pour les analyses d'images lourdes
     async with httpx.AsyncClient(timeout=60.0) as client:
         response = await client.post(url, json=payload)
         response.raise_for_status()
         data = response.json()
     
-    # Extraire le texte de la réponse Gemini
     try:
         text = data["candidates"][0]["content"]["parts"][0]["text"]
-        
-        # Nettoyage si Gemini a entouré de blocs de code markdown
         text = text.strip()
         if text.startswith("```"):
             text = re.sub(r"^```(?:json)?\n", "", text)
             text = re.sub(r"\n```$", "", text)
-            
         return json.loads(text)
     except (KeyError, IndexError, json.JSONDecodeError) as e:
-        # Fallback si le JSON est mal formé ou absent
         raw = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "")
-        print(f"DEBUG: Gemini raw output: {raw}")
-        
-        # Tenter une reconstruction minimale si on a du texte
         if raw:
             return {
                 "transcription": "[Analyse visuelle]",
@@ -61,7 +52,6 @@ async def call_gemini_vision(image_base64: str, prompt: str, model: str = None) 
                 "feedback": raw, 
                 "cours_rappel": ""
             }
-            
         return {"transcription": "", "est_correct": 0, "feedback": "Erreur d'analyse de la réponse.", "cours_rappel": ""}
 
 
@@ -73,7 +63,6 @@ async def correct_handwritten_answer(
     matiere: str
 ) -> dict:
     """Corrige une réponse manuscrite via Gemini Vision."""
-    
     prompt = f"""Tu es un correcteur bienveillant du concours Geipi Polytech pour une élève de Terminale qui s'appelle Garance.
 
 MATIÈRE : {matiere}
@@ -81,36 +70,26 @@ QUESTION : {enonce_court}
 RÉPONSE ATTENDUE : {reponse_attendue}
 
 INSTRUCTIONS :
-1. Analyse l'image fournie. Elle peut contenir du texte manuscrit, des calculs ou un SCHÉMA (bilan des forces, circuit, graphique).
-2. Transcris ou décris précisément ce que tu vois (ex: "Schéma d'un solide sur une pente avec les forces P et R bien orientées").
-3. Compare avec la réponse attendue. Pour un schéma de physique, vérifie l'orientation des vecteurs et la cohérence physique.
-4. Évalue : 2 = correct, 1 = partiellement correct, 0 = incorrect ou vide.
-5. Rédige un feedback pédagogique adapté.
+1. Analyse l'image fournie (texte, calculs ou schéma).
+2. Transcris précisément ce que tu vois.
+3. Compare avec la réponse attendue.
+4. Évalue : 2 = correct, 1 = partiellement correct, 0 = incorrect.
+5. Rédige un feedback LaTeX-friendly.
 
-RÈGLES DE FEEDBACK :
-- Utilise TOUJOURS le format LaTeX entre des symboles $ pour les formules mathématiques (ex: $a_n = \\frac{{V^2}}{{R}}$, $x^2$, etc.).
-- Si correct (2) : un message d'encouragement court et chaleureux. Pas besoin de rappel de cours.
-- Si partiellement correct (1) : valorise ce qui est bon, puis explique l'erreur avec le rappel de cours suivant, et enfin donne la réponse complète.
-- Si incorrect ou vide (0) : pas de jugement négatif, rappelle le cours ci-dessous, puis donne la réponse expliquée pas à pas.
-
-COURS À RAPPELER (si nécessaire) :
-{cours_associe}
-
-Réponds UNIQUEMENT en JSON avec cette structure exacte :
+Réponds UNIQUEMENT en JSON avec cette structure :
 {{
-  "transcription": "description de ce que tu lis ou vois",
-  "est_correct": 0 ou 1 ou 2,
-  "parties_correctes": "ce qui est juste",
-  "erreurs": "les erreurs identifiées",
-  "feedback": "le message complet pour Garance",
-  "cours_rappel": "le rappel de cours si nécessaire"
+  "transcription": "...",
+  "est_correct": 0|1|2,
+  "parties_correctes": "...",
+  "erreurs": "...",
+  "feedback": "...",
+  "cours_rappel": "..."
 }}"""
-
     return await call_gemini_vision(image_base64, prompt)
 
 
-async def call_gemini_text(prompt: str, model: str = None) -> str:
-    """Appelle Gemini avec un prompt texte uniquement (pas d'image)."""
+async def call_gemini_text(prompt: str, model: str = None, is_json: bool = False) -> str:
+    """Appelle Gemini avec un prompt texte uniquement."""
     model = model or settings.GEMINI_MODEL_FAST
     url = f"{settings.GEMINI_API_URL}/{model}:generateContent?key={settings.GEMINI_API_KEY}"
 
@@ -118,16 +97,20 @@ async def call_gemini_text(prompt: str, model: str = None) -> str:
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
             "temperature": 0.7,
-            "maxOutputTokens": 1024
+            "maxOutputTokens": 8192
         }
     }
+    
+    if is_json:
+        payload["generationConfig"]["responseMimeType"] = "application/json"
 
-    async with httpx.AsyncClient(timeout=30.0) as client:
+    async with httpx.AsyncClient(timeout=60.0) as client:
         response = await client.post(url, json=payload)
         response.raise_for_status()
         data = response.json()
 
     try:
-        return data["candidates"][0]["content"]["parts"][0]["text"]
+        text = data["candidates"][0]["content"]["parts"][0]["text"]
+        return text.strip()
     except (KeyError, IndexError):
         return ""

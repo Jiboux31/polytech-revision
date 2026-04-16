@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
+import MathRender from '../components/MathRender'
 
 export default function QCMGenere() {
   const location = useLocation()
@@ -38,11 +39,15 @@ export default function QCMGenere() {
       <Header title="Exercice Surprise IA" />
       
       <div style={{ background: 'var(--bg-card)', padding: '24px', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow)', marginBottom: '24px' }}>
-        <p style={{ fontSize: '1.1rem', marginBottom: '20px' }}>{exercise.enonce_commun}</p>
+        <div style={{ fontSize: '1.1rem', marginBottom: '20px' }}>
+          <MathRender latex={exercise.enonce_commun} />
+        </div>
         
         {exercise.questions.map((q: any, idx: number) => (
           <div key={idx} style={{ marginBottom: '24px', padding: '16px', border: '1px solid #E5E7EB', borderRadius: 8 }}>
-            <p style={{ fontWeight: 600, marginBottom: '12px' }}>{idx + 1}. {q.enonce}</p>
+            <div style={{ fontWeight: 600, marginBottom: '12px' }}>
+              {idx + 1}. <MathRender latex={q.enonce} />
+            </div>
             <div style={{ display: 'flex', gap: '12px' }}>
               <button
                 onClick={() => handleToggle(idx, true)}
@@ -66,7 +71,7 @@ export default function QCMGenere() {
             
             {showCorrection && (
               <div style={{ marginTop: 12, padding: 12, borderRadius: 6, background: answers[idx] === q.reponse ? 'var(--success-bg)' : 'var(--error-bg)', color: answers[idx] === q.reponse ? 'var(--success-text)' : 'var(--error-text)' }}>
-                <strong>{q.reponse ? 'VRAI' : 'FAUX'}</strong> — {q.explication}
+                <strong>{q.reponse ? 'VRAI' : 'FAUX'}</strong> — <MathRender latex={q.explication} />
               </div>
             )}
           </div>
@@ -86,7 +91,7 @@ export default function QCMGenere() {
       </div>
       
       <div style={{ background: '#EFF6FF', padding: 16, borderRadius: 8, color: '#1E40AF', fontSize: '0.9rem' }}>
-        💡 <strong>Indice :</strong> {exercise.indice}
+        💡 <strong>Indice :</strong> <MathRender latex={exercise.indice} />
       </div>
     </div>
   )

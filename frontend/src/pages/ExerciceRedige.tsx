@@ -55,12 +55,10 @@ export default function ExerciceRedige() {
         const canvasImages: Record<string, string> = {}
         const canvases = document.querySelectorAll('canvas')
         canvases.forEach((c: any) => {
-          // Find the id from class mini-canvas-ID
           const classList = Array.from(c.classList) as string[]
           const miniCanvasClass = classList.find(cls => cls.startsWith('mini-canvas-'))
           if (miniCanvasClass) {
             const id = miniCanvasClass.replace('mini-canvas-', '')
-            // Check if canvas is not empty (simple check: any pixel != white)
             canvasImages[id] = c.toDataURL()
           }
         })
@@ -98,6 +96,38 @@ export default function ExerciceRedige() {
   }
 
   const handleHint = () => { setShowHint(true); setHintUsed(true) }
+
+  const handleClear = () => {
+    if (currentQ.champs_reponse) {
+      currentQ.champs_reponse.forEach((ch: any) => {
+        (window as any).clearCanvas?.(ch.id)
+      })
+    }
+  }
+
+  const handleUndo = () => {
+    if (currentQ.champs_reponse) {
+      currentQ.champs_reponse.forEach((ch: any) => {
+        const c = (window as any).activeCanvases?.[ch.id]
+        if (c) {
+          const objects = c.getObjects()
+          if (objects.length > 0) {
+            c.remove(objects[objects.length - 1])
+            c.renderAll()
+          }
+        }
+      })
+    }
+  }
+
+  const toolBtnStyle = {
+    padding: '4px 12px',
+    fontSize: '0.85rem',
+    background: 'white',
+    border: '1px solid #D1D5DB',
+    borderRadius: 4,
+    cursor: 'pointer'
+  }
 
   return (
     <div className="exercice-page" style={{ padding: 20 }}>
@@ -141,6 +171,13 @@ export default function ExerciceRedige() {
       </div>
 
       <div className="zone-c-reponse">
+        {!result && (
+          <div style={{ marginBottom: 10, display: 'flex', gap: 10 }}>
+            <button data-testid="tool-undo" onClick={handleUndo} style={toolBtnStyle}>↩️ Annuler</button>
+            <button data-testid="tool-clear" onClick={handleClear} style={toolBtnStyle}>🗑️ Effacer</button>
+          </div>
+        )}
+
         {!result && (
           <div style={{ marginBottom: 20 }}>
             {(currentQ.type === 'qcm_multi' || currentQ.type === 'qcm_single') ? (
