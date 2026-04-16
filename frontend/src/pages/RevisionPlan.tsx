@@ -109,10 +109,44 @@ export default function RevisionPlan() {
                       borderRadius: '8px',
                       fontWeight: 600,
                       cursor: isAvailable ? 'pointer' : 'not-allowed',
-                      width: '100%'
+                      width: '100%',
+                      marginBottom: '8px'
                     }}
                   >
                     Lancer
+                  </button>
+
+                  <button
+                    onClick={async () => {
+                      try {
+                        const res = await fetch('/api/generation/qcm', {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify({ matiere: bloc.matiere, chapitre: bloc.chapitre, nb_questions: 4 })
+                        })
+                        const data = await res.json()
+                        if (data.status === 'ok') {
+                          navigate('/qcm-genere', { state: { exercice: data.exercice } })
+                        } else {
+                          alert("Erreur de génération IA : " + data.message);
+                        }
+                      } catch (e) {
+                        alert("Erreur réseau lors de la génération.");
+                      }
+                    }}
+                    style={{
+                      background: 'white',
+                      color: 'var(--accent-blue)',
+                      border: '1px dashed var(--accent-blue)',
+                      padding: '8px',
+                      borderRadius: '8px',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      width: '100%',
+                      fontSize: '0.85rem'
+                    }}
+                  >
+                    🎲 Exercice surprise
                   </button>
                 </div>
               )

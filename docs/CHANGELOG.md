@@ -1,5 +1,17 @@
 # Changelog
 
+## [Run 4] - 2026-04-16
+### Ajouté
+- **Dashboard Avancé** : Vue d'ensemble des statistiques, progression par chapitre, et historique.
+- **Note Polytech Estimée** : Calcul dynamique d'une note sur 20 basée sur les coefficients du concours.
+- **Analyse IA Personnalisée** : Génération de conseils par Gemini basés sur les points faibles détectés.
+- **Mode Simulation 3h** : Épreuve chronométrée complète avec tirage aléatoire d'exercices.
+- **Génération d'Exercices IA** : Création d'exercices QCM inédits à la demande via Gemini.
+- **Page QCMGenere** : Support pour jouer les exercices générés par l'IA.
+
+### Corrigé
+- **LLM Service** : Ajout de `call_gemini_text` pour les prompts textuels purs.
+
 ## [Run 3.1] - 2026-04-16
 ### Ajouté
 - **Protocole de test E2E** : Script Playwright standalone (`polytech_e2e.py`) avec 29 scénarios.

@@ -4,7 +4,7 @@ from contextlib import asynccontextmanager
 
 from config import settings
 from models.database import init_db
-from routers import exercices, correction, correction_redige, progression
+from routers import exercices, correction, correction_redige, progression, dashboard, simulation, generation
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -37,6 +37,9 @@ app.include_router(exercices.router, prefix="/api")
 app.include_router(correction.router, prefix="/api")
 app.include_router(correction_redige.router, prefix="/api")
 app.include_router(progression.router, prefix="/api")
+app.include_router(dashboard.router, prefix="/api")
+app.include_router(simulation.router, prefix="/api")
+app.include_router(generation.router, prefix="/api")
 
 
 @app.get("/")

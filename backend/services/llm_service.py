@@ -107,3 +107,27 @@ Réponds UNIQUEMENT en JSON avec cette structure exacte :
 }}"""
 
     return await call_gemini_vision(image_base64, prompt)
+
+
+async def call_gemini_text(prompt: str, model: str = None) -> str:
+    """Appelle Gemini avec un prompt texte uniquement (pas d'image)."""
+    model = model or settings.GEMINI_MODEL_FAST
+    url = f"{settings.GEMINI_API_URL}/{model}:generateContent?key={settings.GEMINI_API_KEY}"
+
+    payload = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {
+            "temperature": 0.7,
+            "maxOutputTokens": 1024
+        }
+    }
+
+    async with httpx.AsyncClient(timeout=30.0) as client:
+        response = await client.post(url, json=payload)
+        response.raise_for_status()
+        data = response.json()
+
+    try:
+        return data["candidates"][0]["content"]["parts"][0]["text"]
+    except (KeyError, IndexError):
+        return ""
